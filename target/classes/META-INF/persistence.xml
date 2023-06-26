@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="Mercado_PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.mercadoComMaven.modelBO.Bairro</class>
+    <class>com.mercadoComMaven.modelBO.Cidade</class>
+    <class>com.mercadoComMaven.modelBO.Classe</class>
+    <class>com.mercadoComMaven.modelBO.Endereco</class>
+    <class>com.mercadoComMaven.modelBO.Cliente</class>
+    <class>com.mercadoComMaven.modelBO.Colaborador</class>
+    <class>com.mercadoComMaven.modelBO.Compra</class>
+    <class>com.mercadoComMaven.modelBO.CondicaoPgto</class>
+    <class>com.mercadoComMaven.modelBO.CupomFiscal</class>
+    <class>com.mercadoComMaven.modelBO.Fornecedor</class>
+    <class>com.mercadoComMaven.modelBO.HistoricoMovimentacao</class>
+    <class>com.mercadoComMaven.modelBO.ItensCompra</class>
+    <class>com.mercadoComMaven.modelBO.ItensCupomFiscal</class>
+    <class>com.mercadoComMaven.modelBO.Marca</class>
+    <class>com.mercadoComMaven.modelBO.Pagamento</class>
+    <class>com.mercadoComMaven.modelBO.Pagar</class>
+    <class>com.mercadoComMaven.modelBO.Produto</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/retaguarda?verifyServerCertificate=false&amp;useSSL=false&amp;requireSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC&amp;zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="ifsc"/>
+    </properties>
+  </persistence-unit>
+</persistence>
