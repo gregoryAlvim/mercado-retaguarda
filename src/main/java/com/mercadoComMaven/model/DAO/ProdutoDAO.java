@@ -2,6 +2,7 @@
 package com.mercadoComMaven.model.DAO;
 
 import com.mercadoComMaven.modelBO.Classe;
+import com.mercadoComMaven.service.ClasseService;
 import com.mercadoComMaven.modelBO.Marca;
 import com.mercadoComMaven.modelBO.Pagar;
 import com.mercadoComMaven.modelBO.Produto;
@@ -90,7 +91,7 @@ public class ProdutoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Prod
                 produto.setMarca(marca);
                 
                 Classe classe = new Classe();
-                ClasseDAO classeDAO = new ClasseDAO();
+                ClasseDAO classeDAO =  ClasseDAO.getInstance();
                 classe = classeDAO.retrive(rst.getInt("classe_id"));
                 produto.setClasse(classe);
             }
@@ -142,7 +143,7 @@ public class ProdutoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Prod
                 produto.setMarca(marca);
                 
                 Classe classe = new Classe();
-                ClasseDAO classeDAO = new ClasseDAO();
+                ClasseDAO classeDAO =  ClasseDAO.getInstance();
                 classe = classeDAO.retrive(rst.getInt("classe_id"));
                 produto.setClasse(classe);
             }
@@ -190,7 +191,7 @@ public class ProdutoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Prod
                 produto.setMarca(marca);
                 
                 Classe classe = new Classe();
-                ClasseDAO classeDAO = new ClasseDAO();
+                ClasseDAO classeDAO =  ClasseDAO.getInstance();
                 classe = classeDAO.retrive(rst.getInt("classe_id"));
                 produto.setClasse(classe);
 
