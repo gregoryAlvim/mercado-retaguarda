@@ -1,6 +1,7 @@
 com\mercadoComMaven\view\FormBuscaCondicaoPgto$1.class
 com\mercadoComMaven\view\MenuPrincipal$12.class
 com\mercadoComMaven\view\ViewCadastroFornecedor.class
+com\mercadoComMaven\modelBO\Colaborador_.class
 com\mercadoComMaven\service\CondicaoPgtoService.class
 com\mercadoComMaven\view\ViewCadastroCliente$13.class
 com\mercadoComMaven\view\ViewCadastroCondicaoPgto$3.class
@@ -21,10 +22,12 @@ com\mercadoComMaven\view\ViewCadastroCidade$7.class
 com\mercadoComMaven\model\DAO\PagamentoDAO.class
 com\mercadoComMaven\view\ViewCadastroEndereco$3.class
 com\mercadoComMaven\view\ViewCadastroProduto.class
+com\mercadoComMaven\modelBO\ItensCompra_.class
 com\mercadoComMaven\view\ViewCadastroEndereco$9.class
 com\mercadoComMaven\view\FormBuscaBairro$2.class
 com\mercadoComMaven\view\FormBuscaCliente$3$1.class
 com\mercadoComMaven\controller\ControllerCadColaborador.class
+com\mercadoComMaven\modelBO\Produto_.class
 com\mercadoComMaven\view\ViewCadastroCidade$1.class
 com\mercadoComMaven\model\DAO\CupomFiscalDAO.class
 com\mercadoComMaven\view\MenuPrincipal$2.class
@@ -51,12 +54,14 @@ com\mercadoComMaven\view\MenuPrincipal$8.class
 com\mercadoComMaven\view\ObjetoCadastro$2.class
 com\mercadoComMaven\model\DAO\ItensCompraDAO.class
 com\mercadoComMaven\view\MenuPrincipal$11.class
+com\mercadoComMaven\modelBO\Bairro_.class
 com\mercadoComMaven\view\ViewCadastroBairro$8.class
 com\mercadoComMaven\view\ViewCadastroCidade$2.class
 com\mercadoComMaven\view\FormBuscaCondicaoPgto$2.class
 com\mercadoComMaven\service\CidadeService.class
 com\mercadoComMaven\view\ViewCadastroEndereco$8.class
 com\mercadoComMaven\service\ClienteService.class
+com\mercadoComMaven\modelBO\Pessoa_.class
 com\mercadoComMaven\view\ViewCadastroFornecedor$14.class
 com\mercadoComMaven\modelBO\Pessoa.class
 com\mercadoComMaven\controller\ControllerCadMarca.class
@@ -99,6 +104,7 @@ com\mercadoComMaven\view\ViewCadastroEndereco$5.class
 com\mercadoComMaven\modelBO\Pagar.class
 com\mercadoComMaven\view\ViewCadastroBairro$4.class
 com\mercadoComMaven\controller\ControllerCadCliente.class
+com\mercadoComMaven\modelBO\CupomFiscal_.class
 com\mercadoComMaven\view\ViewCadastroCliente$7.class
 com\mercadoComMaven\view\ViewCadastroProduto$10.class
 com\mercadoComMaven\view\ViewCadastroEndereco$10.class
@@ -113,6 +119,9 @@ com\mercadoComMaven\view\ViewCadastroCidade$5.class
 com\mercadoComMaven\model\DAO\HistoricoMovimentacaoDAO.class
 com\mercadoComMaven\view\ViewCadastroClasse$1.class
 com\mercadoComMaven\view\ViewCadastroCliente$15.class
+com\mercadoComMaven\modelBO\Pagar_.class
+com\mercadoComMaven\modelBO\Marca_.class
+com\mercadoComMaven\modelBO\Pagamento_.class
 com\mercadoComMaven\view\ViewCadastroFornecedor$17.class
 com\mercadoComMaven\view\ViewCadastroClasse$2.class
 com\mercadoComMaven\controller\ControllerBuscaCidade.class
@@ -121,6 +130,7 @@ com\mercadoComMaven\view\MenuPrincipal$6.class
 com\mercadoComMaven\view\FormBuscaFornecedor$2.class
 com\mercadoComMaven\service\EnderecoService.class
 com\mercadoComMaven\view\ViewCadastroCidade$6.class
+com\mercadoComMaven\modelBO\CondicaoPgto_.class
 com\mercadoComMaven\controller\ControllerCadBairro.class
 com\mercadoComMaven\view\FormBuscaProduto.class
 com\mercadoComMaven\view\MenuPrincipal.class
@@ -131,6 +141,7 @@ com\mercadoComMaven\view\ViewCadastroBairro$5.class
 com\mercadoComMaven\model\DAO\EnderecoDAO.class
 com\mercadoComMaven\view\FormBuscaFornecedor$3.class
 com\mercadoComMaven\view\ViewCadastroCondicaoPgto$6.class
+com\mercadoComMaven\modelBO\Compra_.class
 com\mercadoComMaven\view\ViewCadastroMarca$9.class
 com\mercadoComMaven\view\ViewCadastroProduto$19.class
 com\mercadoComMaven\view\ViewCadastroProduto$8.class
@@ -156,16 +167,20 @@ com\mercadoComMaven\view\ViewCadastroClasse$7.class
 com\mercadoComMaven\view\ViewCadastroCidade$4.class
 com\mercadoComMaven\view\ViewCadastroProduto$13.class
 com\mercadoComMaven\view\FormBuscaMarca.class
+com\mercadoComMaven\modelBO\HistoricoMovimentacao_.class
 com\mercadoComMaven\view\ViewCadastroCliente.class
 com\mercadoComMaven\modelBO\Pagamento.class
 com\mercadoComMaven\modelBO\CupomFiscal.class
 com\mercadoComMaven\view\ViewCadastroColaborador$2.class
 com\mercadoComMaven\model\DAO\PagarDAO.class
+com\mercadoComMaven\modelBO\Classe_.class
 com\mercadoComMaven\model\DAO\CidadeDAO.class
 com\mercadoComMaven\model\DAO\InterfaceDAO.class
 com\mercadoComMaven\view\FormBuscaCidade.class
 com\mercadoComMaven\view\MenuPrincipal$10.class
+com\mercadoComMaven\modelBO\Cliente_.class
 com\mercadoComMaven\view\ViewCadastroBairro$7.class
+com\mercadoComMaven\modelBO\Endereco_.class
 com\mercadoComMaven\view\ViewCadastroColaborador.class
 com\mercadoComMaven\view\FormBuscaCliente$2.class
 com\mercadoComMaven\view\ViewCadastroBairro.class
@@ -183,6 +198,7 @@ com\mercadoComMaven\view\ViewCadastroMarca$3.class
 com\mercadoComMaven\service\ColaboradorService.class
 com\mercadoComMaven\view\FormBuscaCliente$1.class
 com\mercadoComMaven\controller\ControllerBuscaCondicaoPgto.class
+com\mercadoComMaven\modelBO\Cidade_.class
 com\mercadoComMaven\view\ViewCadastroFornecedor$20.class
 com\mercadoComMaven\view\FormBuscaCondicaoPgto.class
 com\mercadoComMaven\view\ViewCadastroColaborador$1.class
@@ -229,6 +245,7 @@ com\mercadoComMaven\service\FornecedorService.class
 com\mercadoComMaven\view\FormBuscaProduto$2.class
 com\mercadoComMaven\view\ViewCadastroMarca$5.class
 com\mercadoComMaven\view\ViewCadastroProduto$17.class
+com\mercadoComMaven\modelBO\ItensCupomFiscal_.class
 com\mercadoComMaven\service\BairroService.class
 com\mercadoComMaven\view\ViewCadastroProduto$4.class
 com\mercadoComMaven\model\DAO\ConnectionFactory.class
@@ -248,6 +265,7 @@ com\mercadoComMaven\view\ViewCadastroProduto$14.class
 com\mercadoComMaven\view\FormBuscaProduto$1.class
 com\mercadoComMaven\view\ViewCadastroProduto$3.class
 com\mercadoComMaven\view\ViewCadastroCliente$1.class
+com\mercadoComMaven\modelBO\Fornecedor_.class
 com\mercadoComMaven\view\ViewCadastroCondicaoPgto$5.class
 com\mercadoComMaven\view\FormBuscaBairro$3$1.class
 com\mercadoComMaven\controller\ControllerBuscaClasse.class
