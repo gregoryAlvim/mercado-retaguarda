@@ -82,7 +82,7 @@ public class FornecedorDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.F
                 fornecedor.setStatus(rst.getString("status"));
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO enderecoDAO = new EnderecoDAO();
+                EnderecoDAO enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 fornecedor.setEndereco(endereco);
             }
@@ -132,7 +132,7 @@ public class FornecedorDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.F
                 fornecedor.setStatus(rst.getString("status"));
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO enderecoDAO = new EnderecoDAO();
+                EnderecoDAO enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 fornecedor.setEndereco(endereco);
             }
@@ -184,7 +184,7 @@ public class FornecedorDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.F
                 fornecedor.setStatus(rst.getString("status"));
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO enderecoDAO = new EnderecoDAO();
+                EnderecoDAO enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 fornecedor.setEndereco(endereco);
                 

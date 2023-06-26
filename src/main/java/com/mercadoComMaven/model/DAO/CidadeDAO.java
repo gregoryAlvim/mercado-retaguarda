@@ -42,7 +42,7 @@ public class CidadeDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Cidad
     
     @Override
     public void create(Cidade objeto) {
-          try {
+        try {
             entityManager.getTransaction().begin();
             entityManager.persist(objeto);
             entityManager.getTransaction().commit();
