@@ -78,14 +78,14 @@ public class ControllerCadMarca implements ActionListener{
                 JOptionPane.showMessageDialog(null, "Atributo Descrição é Obrigatório");
             }else{
                 
-                Marca bairro = new Marca();
-                bairro.setDescricao(telaMarca.getTextoDescricao().getText());
+                Marca marca = new Marca();
+                marca.setDescricao(telaMarca.getTextoDescricao().getText());
 
                 if (this.telaMarca.getTextoId().getText().equalsIgnoreCase("")) {
-                    MarcaService.criar(bairro);
+                    MarcaService.criar(marca);
                 } else {
-                    bairro.setId(Integer.parseInt(telaMarca.getTextoId().getText()));
-                    MarcaService.atualizar(bairro);
+                    marca.setId(Integer.parseInt(telaMarca.getTextoId().getText()));
+                    MarcaService.atualizar(marca);
                 }
                 telaMarca.getTextoId().setText("");
                 telaMarca.getTextoDescricao().setText("");
@@ -94,8 +94,6 @@ public class ControllerCadMarca implements ActionListener{
                 
                 utilities.Utils.ativa(true, telaMarca.getPainelBotoes());
                 utilities.Utils.ligaDesliga(true, telaMarca.getPainelDados());
-
-                JOptionPane.showMessageDialog(null, bairro.toString());
             }
         
         }else if(acao.getSource() == telaMarca.getSair()){

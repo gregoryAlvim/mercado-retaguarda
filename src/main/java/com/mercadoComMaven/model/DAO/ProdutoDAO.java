@@ -85,8 +85,7 @@ public class ProdutoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Prod
                 
                 
                 Marca marca = new Marca();
-                MarcaDAO marcaDAO = new MarcaDAO();
-                marca = marcaDAO.retrive(rst.getInt("marca_id"));
+                marca = MarcaDAO.getInstance().retrive(rst.getInt("marca_id"));         
                 produto.setMarca(marca);
                 
                 Classe classe = new Classe();
@@ -137,8 +136,7 @@ public class ProdutoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Prod
                 
                 
                 Marca marca = new Marca();
-                MarcaDAO marcaDAO = new MarcaDAO();
-                marca = marcaDAO.retrive(rst.getInt("marca_id"));
+                marca = MarcaDAO.getInstance().retrive(rst.getInt("marca_id"));         
                 produto.setMarca(marca);
                 
                 Classe classe = new Classe();
@@ -185,8 +183,7 @@ public class ProdutoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Prod
                 produto.setEstoqueMaximo(rst.getInt("estoqueMaximo"));
                 
                 Marca marca = new Marca();
-                MarcaDAO marcaDAO = new MarcaDAO();
-                marca = marcaDAO.retrive(rst.getInt("marca_id"));
+                marca = MarcaDAO.getInstance().retrive(rst.getInt("marca_id"));         
                 produto.setMarca(marca);
                 
                 Classe classe = new Classe();

@@ -1,5 +1,4 @@
 package com.mercadoComMaven.model.DAO;
-
 import com.mercadoComMaven.modelBO.Marca;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,145 +6,93 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
-public class MarcaDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Marca>{
+public class MarcaDAO implements InterfaceDAO<Marca>{
+    
+    private static MarcaDAO instance;
+    protected EntityManager entityManager;
+    
+    public static MarcaDAO getInstance() {
+        if (instance == null) {
+            instance = new MarcaDAO();
+        }
+        
+        return instance;
+    }
+
+    private MarcaDAO() {
+        entityManager = getEntityManager();
+    }
+    
+    private EntityManager getEntityManager() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Mercado_PU");
+        
+        if (entityManager == null) {
+            entityManager = factory.createEntityManager();
+        }
+        
+        return entityManager;
+    }
 
     @Override
     public void create(Marca objeto) {
-Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO marca (descricao) VALUES (?)";
-        
-        PreparedStatement pstm = null;
-        
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, objeto.getDescricao());
-            pstm.executeUpdate();
-        } catch (SQLException ex) {
+            entityManager.getTransaction().begin();
+            entityManager.persist(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
             ex.printStackTrace();
+            entityManager.getTransaction().rollback();
         }
-        
-        ConnectionFactory.closeConnection(conexao, pstm);    }
+    }
 
     @Override
     public Marca retrive(int codigo) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT id, descricao FROM marca WHERE id = ?";
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, codigo);
-            rst = pstm.executeQuery();
-            Marca marca = new Marca();
-            
-            while(rst.next()) {
-                marca.setId(rst.getInt("id"));
-                marca.setDescricao(rst.getString("descricao"));
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return marca;
-            
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
-        }
+        return entityManager.find(Marca.class, codigo);
     }
 
     @Override
     public Marca retrive(String descricao) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT id, descricao FROM marca WHERE descricao = ?";
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, descricao);
-            rst = pstm.executeQuery();
-            Marca marca = new Marca();
-            
-            while(rst.next()) {
-                marca.setId(rst.getInt("id"));
-                marca.setDescricao(rst.getString("descricao"));
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return marca;
-            
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
-        }
+        Marca marca = entityManager.createQuery("SELECT m FROM Marca m WHERE m.descricao = :parDescricao", Marca.class).setParameter("parDescricao", descricao).getSingleResult();
+
+        return marca;
     }
 
     @Override
     public List<Marca> retrive() {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT id, descricao FROM marca";
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
-        
-        List<Marca> listaBairro = new ArrayList<>();
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            rst = pstm.executeQuery();
+        List<Marca> marcas;
             
-            while(rst.next()) {
-                Marca marca = new Marca();
-                marca.setId(rst.getInt("id"));
-                marca.setDescricao(rst.getString("descricao"));
-                
-                listaBairro.add(marca);
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return listaBairro;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
-        }
+        marcas = entityManager.createQuery("SELECT m FROM Marca m", Marca.class).getResultList();
+        
+        return marcas;
     }
 
     @Override
     public void update(Marca objeto) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "UPDATE marca SET descricao = ? WHERE id = ?";
-        PreparedStatement pstm = null;
-        
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, objeto.getDescricao());
-            pstm.setInt(2, objeto.getId());
-            pstm.executeUpdate();
-        } catch (SQLException ex) {
+            entityManager.getTransaction().begin();
+            entityManager.merge(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
             ex.printStackTrace();
+            entityManager.getTransaction().rollback();   
         }
-        
-        ConnectionFactory.closeConnection(conexao, pstm);
     }
 
     @Override
     public void delete(Marca objeto) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "DELETE marca WHERE id = ?";
-        PreparedStatement pstm = null;
-        
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, objeto.getId());
-            pstm.executeUpdate();
-        } catch (SQLException ex) {
+            entityManager.getTransaction().begin();
+            objeto = entityManager.find(Marca.class, objeto.getId());
+            entityManager.remove(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
             ex.printStackTrace();
+            entityManager.getTransaction().rollback();
         }
-        
-        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }
