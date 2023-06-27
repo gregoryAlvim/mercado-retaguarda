@@ -1,10 +1,5 @@
 package com.mercadoComMaven.model.DAO;
 import com.mercadoComMaven.modelBO.Marca;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
