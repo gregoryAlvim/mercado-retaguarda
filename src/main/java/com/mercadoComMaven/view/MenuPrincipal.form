@@ -29,7 +29,7 @@
                   <KeyStroke key="Ctrl+B"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Component.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Component.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Bairro"/>
               </Properties>
@@ -43,7 +43,7 @@
                   <KeyStroke key="Ctrl+C"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Company.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Company.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cidade"/>
               </Properties>
@@ -57,7 +57,7 @@
                   <KeyStroke key="Ctrl+E"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Home.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Home.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Endere&#xe7;o"/>
               </Properties>
@@ -73,7 +73,7 @@
                   <KeyStroke key="Ctrl+P"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\People.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\People.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cliente"/>
               </Properties>
@@ -87,7 +87,7 @@
                   <KeyStroke key="Ctrl+O"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Briefcase.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Briefcase.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Colaborador"/>
               </Properties>
@@ -101,7 +101,7 @@
                   <KeyStroke key="Ctrl+M"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Boss.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Boss.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fornecedor"/>
               </Properties>
@@ -115,7 +115,7 @@
                   <KeyStroke key="Ctrl+L"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Dollar.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Dollar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Condi&#xe7;&#xe3;o Pagamento"/>
               </Properties>
@@ -129,7 +129,7 @@
                   <KeyStroke key="Ctrl+H"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Blue tag.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Blue tag.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Produto"/>
               </Properties>
@@ -143,7 +143,7 @@
                   <KeyStroke key="Ctrl+R"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Green bookmark.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Green bookmark.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Marca"/>
               </Properties>
@@ -157,7 +157,7 @@
                   <KeyStroke key="Ctrl+F"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Blue pin.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Blue pin.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Classe"/>
               </Properties>
@@ -173,7 +173,7 @@
                   <KeyStroke key="ESCAPE"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Exit.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Exit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
