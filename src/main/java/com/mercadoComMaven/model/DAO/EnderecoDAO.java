@@ -63,7 +63,7 @@ public class EnderecoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.End
 
     @Override
     public Endereco retrive(String cep) {
-        Endereco endereco = entityManager.createQuery("SELECT e FROM Endereco e WHERE e.cep = :parCep", Endereco.class).setParameter("parCep", cep).getSingleResult();
+        Endereco endereco = entityManager.createQuery("SELECT e FROM Endereco e WHERE e.logradouro = :parCep", Endereco.class).setParameter("parCep", cep).getSingleResult();
 
         return endereco;
     }

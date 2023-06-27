@@ -19,16 +19,12 @@ public class ControllerCadCliente implements ActionListener {
 
     ViewCadastroCliente telaCliente;
     public static int codigo;
-
-    //Tentando buscar dados de outra tela
     public static String endereco;
 
     String fullAddress;
     String dataFormatada;
 
     private static Endereco enderecoLocal;
-
-    //-----------------------------------------------
 
     public void validarEndereco(String enderecoParam) {
         if (enderecoParam.equalsIgnoreCase("")) {
