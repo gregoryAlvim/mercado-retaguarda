@@ -15,8 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-
-
 public class ControllerCadCliente implements ActionListener {
 
     ViewCadastroCliente telaCliente;
@@ -106,7 +104,7 @@ public class ControllerCadCliente implements ActionListener {
         telaCliente.getSair().addActionListener(this);
         telaCliente.getjButtonBuscarEndereco().addActionListener(this);
 
-        utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
+        utilities.Utils.ativa(false, telaCliente.getPainelBotoes());
         utilities.Utils.ligaDesliga(false, telaCliente.getPainelDados());
     }
 
@@ -127,8 +125,6 @@ public class ControllerCadCliente implements ActionListener {
             setAllInputsEmpty();
 
         } else if (acao.getSource() == telaCliente.getBuscar()) {
-
-            this.codigo = 0;
 
             FormBuscaCliente telaBuscaCliente = new FormBuscaCliente(telaCliente, true);
             ControllerBuscaCliente controllerBuscaCliente = new ControllerBuscaCliente(telaBuscaCliente);
@@ -248,7 +244,6 @@ public class ControllerCadCliente implements ActionListener {
             }
 
         } else if (acao.getSource() == telaCliente.getjButtonBuscarEndereco()) {
-            this.codigo = 0;
 
             FormBuscaEndereco formBuscaEndereco = new FormBuscaEndereco(null, true);
             ControllerBuscaEndereco controllerBuscaEndereco = new ControllerBuscaEndereco(formBuscaEndereco);
