@@ -68,7 +68,7 @@ public class ColaboradorDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.
                 colaborador.setSenha(rst.getString("senha"));
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = new EnderecoDAO();
+                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 colaborador.setEndereco(endereco);
             }
@@ -111,7 +111,7 @@ public class ColaboradorDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.
                 colaborador.setSenha(rst.getString("senha"));
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = new EnderecoDAO();
+                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 colaborador.setEndereco(endereco);
             }
@@ -156,7 +156,7 @@ public class ColaboradorDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.
                 colaborador.setSenha(rst.getString("senha"));
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = new EnderecoDAO();
+                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 colaborador.setEndereco(endereco);
                 

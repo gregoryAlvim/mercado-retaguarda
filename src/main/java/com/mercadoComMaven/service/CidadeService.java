@@ -7,33 +7,27 @@ import java.util.List;
 public class CidadeService {
 
     public static void criar(Cidade objeto) {
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        cidadeDAO.create(objeto);
+        CidadeDAO.getInstance().create(objeto);
     }
 
     public static Cidade buscar(int codigo) {
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        return cidadeDAO.retrive(codigo);
+        return CidadeDAO.getInstance().retrive(codigo);
     }
 
     public static Cidade buscar(String descricao) {
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        return cidadeDAO.retrive(descricao);    
+        return CidadeDAO.getInstance().retrive(descricao);   
     }
 
     public static List<Cidade> buscar() {
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        return cidadeDAO.retrive();   
+        return CidadeDAO.getInstance().retrive(); 
     }
 
     public static void atualizar(Cidade objeto) {
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        cidadeDAO.update(objeto);   
+        CidadeDAO.getInstance().update(objeto);  
     }
 
     public static void excluir(Cidade objeto) {
-        CidadeDAO cidadeDAO = new CidadeDAO();
-        cidadeDAO.delete(objeto);   
+        CidadeDAO.getInstance().delete(objeto);  
     }
     
 }

@@ -50,8 +50,6 @@ public class ControllerCadCidade implements ActionListener{
             
         } else if (acao.getSource() == telaCidade.getBuscar()) {
             
-            this.codigo = 0;
-            
             FormBuscaCidade telaBuscaCidade = new FormBuscaCidade(telaCidade, true);
             ControllerBuscaCidade controllerBuscaCidade = new ControllerBuscaCidade(telaBuscaCidade);
             controllerBuscaCidade.quemChamou = "CIDADE";
@@ -69,6 +67,8 @@ public class ControllerCadCidade implements ActionListener{
                 telaCidade.getTextoDescricao().setText(cidade.getDescricao());
                 telaCidade.getTextoId().setEnabled(false);
                 telaCidade.getTextoDescricao().setEnabled(true);
+                
+                this.codigo = 0;
             }
         
         } else if (acao.getSource() == telaCidade.getGravar()) {

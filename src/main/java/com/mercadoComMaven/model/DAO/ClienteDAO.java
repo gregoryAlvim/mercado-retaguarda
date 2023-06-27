@@ -76,7 +76,7 @@ public class ClienteDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Clie
                 cliente.setSexo(sexoChar);
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = new EnderecoDAO();
+                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 cliente.setEndereco(endereco);
             }
@@ -124,7 +124,7 @@ public class ClienteDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Clie
                 cliente.setSexo(sexoChar);
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = new EnderecoDAO();
+                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 cliente.setEndereco(endereco);
             }
@@ -173,7 +173,7 @@ public class ClienteDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Clie
                 cliente.setSexo(sexoChar);
                 
                 Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = new EnderecoDAO();
+                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
                 endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
                 cliente.setEndereco(endereco);
                 
