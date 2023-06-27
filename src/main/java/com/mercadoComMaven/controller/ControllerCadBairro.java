@@ -28,7 +28,6 @@ public class ControllerCadBairro implements ActionListener {
         
         telaBairro.getTextoId().setEnabled(false);
         telaBairro.getTextoDescricao().setEnabled(false);
-
     }
 
     @Override
