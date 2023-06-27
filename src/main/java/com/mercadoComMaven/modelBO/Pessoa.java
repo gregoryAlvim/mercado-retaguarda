@@ -42,7 +42,7 @@ public abstract class Pessoa implements Serializable{
     
     @Column
     @Temporal(TemporalType.DATE)
-    private Date dataCadastro;
+    private Date dtCadastro;
     
     @JoinColumn
     @ManyToOne
@@ -60,7 +60,7 @@ public abstract class Pessoa implements Serializable{
         this.complementoEndereco = complementoEndereco;
         this.observacao = observacao;
         this.status = status;
-        this.dataCadastro = dtCadastro;
+        this.dtCadastro = dtCadastro;
         this.endereco = endereco;
     }
 
@@ -129,11 +129,11 @@ public abstract class Pessoa implements Serializable{
     }
 
     public Date getDataCadastro() {
-        return dataCadastro;
+        return dtCadastro;
     }
 
     public void setDataCadastro(Date dtCadastro) {
-        this.dataCadastro = dtCadastro;
+        this.dtCadastro = dtCadastro;
     }
 
     public Endereco getEndereco() {

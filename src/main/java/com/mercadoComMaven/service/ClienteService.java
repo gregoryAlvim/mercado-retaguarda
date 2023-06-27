@@ -7,27 +7,33 @@ import java.util.List;
 public class ClienteService {
 
     public static void criar(Cliente objeto) {
-        ClienteDAO.getInstance().create(objeto);
+        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO.create(objeto);
     }
 
     public static Cliente buscar(int codigo) {
-        return ClienteDAO.getInstance().retrive(codigo);
+        ClienteDAO clienteDAO = new ClienteDAO();
+        return clienteDAO.retrive(codigo);
     }
 
     public static Cliente buscar(String descricao) {
-        return ClienteDAO.getInstance().retrive(descricao);   
+        ClienteDAO clienteDAO = new ClienteDAO();
+        return clienteDAO.retrive(descricao);    
     }
 
     public static List<Cliente> buscar() {
-        return ClienteDAO.getInstance().retrive(); 
+        ClienteDAO clienteDAO = new ClienteDAO();
+        return clienteDAO.retrive();   
     }
 
     public static void atualizar(Cliente objeto) {
-        ClienteDAO.getInstance().update(objeto);  
+        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO.update(objeto);   
     }
 
     public static void excluir(Cliente objeto) {
-        ClienteDAO.getInstance().delete(objeto);  
+        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO.delete(objeto);   
     }
     
 }
