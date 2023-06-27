@@ -265,7 +265,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
 
         JButtonNovo.setBackground(new java.awt.Color(153, 153, 153));
         JButtonNovo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonNovo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Create.png")); // NOI18N
+        JButtonNovo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Create.png")); // NOI18N
         JButtonNovo.setText("Novo");
         JButtonNovo.setActionCommand("0");
         JButtonNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -278,7 +278,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
 
         JButtonGravar.setBackground(new java.awt.Color(153, 153, 153));
         JButtonGravar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonGravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\OK.png")); // NOI18N
+        JButtonGravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\OK.png")); // NOI18N
         JButtonGravar.setText("Gravar");
         JButtonGravar.setActionCommand("1");
         JButtonGravar.addActionListener(new java.awt.event.ActionListener() {
@@ -290,7 +290,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
 
         JButtonCancelar.setBackground(new java.awt.Color(153, 153, 153));
         JButtonCancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonCancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Delete.png")); // NOI18N
+        JButtonCancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Cancel.png")); // NOI18N
         JButtonCancelar.setText("Cancelar");
         JButtonCancelar.setActionCommand("1");
         JButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -302,7 +302,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
 
         JButtonBuscar.setBackground(new java.awt.Color(153, 153, 153));
         JButtonBuscar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonBuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
+        JButtonBuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
         JButtonBuscar.setText("Buscar");
         JButtonBuscar.setActionCommand("0");
         JButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -314,7 +314,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
 
         JButtonSair.setBackground(new java.awt.Color(153, 153, 153));
         JButtonSair.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Exit.png")); // NOI18N
+        JButtonSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Exit.png")); // NOI18N
         JButtonSair.setText("Sair");
         JButtonSair.setActionCommand("0");
         JButtonSair.addActionListener(new java.awt.event.ActionListener() {
@@ -369,9 +369,14 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
 
         jButtonBuscarEndereco.setBackground(new java.awt.Color(204, 204, 204));
         jButtonBuscarEndereco.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jButtonBuscarEndereco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Find.png"))); // NOI18N
+        jButtonBuscarEndereco.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
         jButtonBuscarEndereco.setText("Buscar");
         jButtonBuscarEndereco.setPreferredSize(new java.awt.Dimension(80, 24));
+        jButtonBuscarEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarEnderecoActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel11.setText("Complemento:");
@@ -545,7 +550,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -570,6 +575,10 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
     private void JButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonSairActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JButtonSairActionPerformed
+
+    private void jButtonBuscarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonBuscarEnderecoActionPerformed
 
     /**
      * @param args the command line arguments
