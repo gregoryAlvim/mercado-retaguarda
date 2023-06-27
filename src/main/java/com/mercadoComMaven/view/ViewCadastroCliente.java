@@ -452,7 +452,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         jLabel11.setText("Endereço:");
 
         jButtonBuscarEndereco.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonBuscarEndereco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Find.png"))); // NOI18N
+        jButtonBuscarEndereco.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
         jButtonBuscarEndereco.setText("...");
         jButtonBuscarEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
