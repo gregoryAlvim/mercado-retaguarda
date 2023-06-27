@@ -18,7 +18,7 @@ public class Cliente extends Pessoa implements Serializable{
    
    @Column
    @Temporal(TemporalType.DATE)
-   private Date dtNascimento;
+   private Date dataNascimento;
    
    @Column
    private char sexo;
@@ -30,7 +30,7 @@ public class Cliente extends Pessoa implements Serializable{
         super(id, nome, fone1, fone2, email, complementoEndereco, observacao, status, dataCadastro, endereco);
         this.cpf = cpf;
         this.rg = rg;
-        this.dtNascimento = dtNascimento;
+        this.dataNascimento = dtNascimento;
         this.sexo = sexo;
     }
 
@@ -51,11 +51,11 @@ public class Cliente extends Pessoa implements Serializable{
     }
 
     public Date getDataNascimento() {
-        return dtNascimento;
+        return dataNascimento;
     }
 
     public void setDataNascimento(Date dtNascimento) {
-        this.dtNascimento = dtNascimento;
+        this.dataNascimento = dtNascimento;
     }
 
     public char getSexo() {
