@@ -47,25 +47,6 @@ public class ControllerCadCliente implements ActionListener {
 
         telaCliente.getTextoEndereco().setText(fullAddress);
     }
-
-    public void enableDisable(boolean estado) {;
-        telaCliente.getTextoNome().setEnabled(estado);
-        telaCliente.getTextoTelefone1().setEnabled(estado);
-        telaCliente.getTextoTelefone2().setEnabled(estado);
-        telaCliente.getTextoRG().setEnabled(estado);
-        telaCliente.getTextoCPF().setEnabled(estado);
-        telaCliente.getTextoEmail().setEnabled(estado);
-        telaCliente.getjFormattedTextDataNascimento().setEnabled(estado);
-        telaCliente.getTextoDataCadastro().setEnabled(false);
-        telaCliente.getjButtonBuscarEndereco().setEnabled(estado);
-        telaCliente.getComboSexo().setEnabled(estado);
-        telaCliente.getComboStatus().setEnabled(estado);
-        telaCliente.getTextoObservacao().setEnabled(estado);
-        telaCliente.getTextoComplemento().setEnabled(estado);
-        telaCliente.getTextoEndereco().setEnabled(false);
-    }
-
-    ;
     
     public void setAllInputsEmpty() {
         telaCliente.getTextoNome().requestFocus();
@@ -127,7 +108,6 @@ public class ControllerCadCliente implements ActionListener {
 
         utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
         utilities.Utils.ligaDesliga(false, telaCliente.getPainelDados());
-        enableDisable(false);
     }
 
     @Override
@@ -135,7 +115,6 @@ public class ControllerCadCliente implements ActionListener {
         if (acao.getSource() == telaCliente.getNovo()) {
             utilities.Utils.ativa(false, telaCliente.getPainelBotoes());
             utilities.Utils.ligaDesliga(true, telaCliente.getPainelDados());
-            enableDisable(true);
 
             DateFormat dataCadastro = new SimpleDateFormat("dd/MM/yyyy");
             Date data = new Date();
@@ -145,7 +124,6 @@ public class ControllerCadCliente implements ActionListener {
         } else if (acao.getSource() == telaCliente.getCancelar()) {
             utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
             utilities.Utils.ligaDesliga(false, telaCliente.getPainelDados());
-            enableDisable(false);
             setAllInputsEmpty();
 
         } else if (acao.getSource() == telaCliente.getBuscar()) {
@@ -199,7 +177,7 @@ public class ControllerCadCliente implements ActionListener {
                     telaCliente.getComboSexo().setSelectedIndex(1);
                 }
 
-                enableDisable(true);
+
             }
 
         } else if (acao.getSource() == telaCliente.getGravar()) {
@@ -262,7 +240,7 @@ public class ControllerCadCliente implements ActionListener {
                 }
 
                 setAllInputsEmpty();
-                enableDisable(false);
+     
 
                 utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
                 utilities.Utils.ligaDesliga(true, telaCliente.getPainelDados());

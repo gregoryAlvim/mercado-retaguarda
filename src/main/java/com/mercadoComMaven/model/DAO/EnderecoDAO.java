@@ -55,7 +55,7 @@ public class EnderecoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.End
                 endereco.setCep(rst.getString("cep"));
                 
                 Cidade cidade = new Cidade();
-                CidadeDAO  cidadeDAO = new CidadeDAO();
+                CidadeDAO  cidadeDAO = CidadeDAO.getInstance();
                 cidade = cidadeDAO.retrive(rst.getInt("cidade_id"));
                 endereco.setCidade(cidade);
                 
@@ -95,7 +95,7 @@ public class EnderecoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.End
                 endereco.setCep(rst.getString("cep"));
                 
                 Cidade cidade = new Cidade();
-                CidadeDAO  cidadeDAO = new CidadeDAO();
+                CidadeDAO  cidadeDAO = CidadeDAO.getInstance();
                 cidade = cidadeDAO.retrive(rst.getInt("cidade_id"));
                 endereco.setCidade(cidade);
                 
@@ -136,7 +136,7 @@ public class EnderecoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.End
                 endereco.setCep(rst.getString("cep"));
                 
                 Cidade cidade = new Cidade();
-                CidadeDAO  cidadeDAO = new CidadeDAO();
+                CidadeDAO  cidadeDAO = CidadeDAO.getInstance();
                 cidade = cidadeDAO.retrive(rst.getInt("cidade_id"));
                 endereco.setCidade(cidade);
                 
