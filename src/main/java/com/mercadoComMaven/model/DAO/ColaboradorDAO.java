@@ -66,7 +66,7 @@ public class ColaboradorDAO implements InterfaceDAO<Colaborador>{
     public List<Colaborador> retrive() {
         List<Colaborador> colaboradores;
             
-        colaboradores = entityManager.createQuery("SELECT c FROM EnderecoColaborador c", Colaborador.class).getResultList();
+        colaboradores = entityManager.createQuery("SELECT c FROM Colaborador c", Colaborador.class).getResultList();
         
         return colaboradores;
     }
