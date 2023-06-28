@@ -8,215 +8,92 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
-public class ColaboradorDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.Colaborador>{
+public class ColaboradorDAO implements InterfaceDAO<Colaborador>{
 
-    @Override
-    public void create(Colaborador objeto) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO colaborador (endereco_id, nome, fone1, fone2, complementoEndereco, email, dataCadastro, observacao, status, login, senha) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-        
-        PreparedStatement pstm = null;
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, objeto.getEndereco().getId());
-            pstm.setString(2, objeto.getNome());
-            pstm.setString(3, objeto.getFone1());
-            pstm.setString(4, objeto.getFone2());
-            pstm.setString(5, objeto.getComplementoEndereco());
-            pstm.setString(6, objeto.getEmail());
-            pstm.setDate(7, new java.sql.Date(objeto.getDataCadastro().getTime()));
-            pstm.setString(8, objeto.getObservacao());
-            pstm.setString(9, objeto.getStatus());
-            pstm.setString(10, objeto.getLogin());
-            pstm.setString(11, objeto.getSenha());
-            
-            pstm.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+    private static ColaboradorDAO instance;
+    protected EntityManager entityManager;
+    
+    public static ColaboradorDAO getInstance() {
+        if (instance == null) {
+            instance = new ColaboradorDAO();
         }
         
-        ConnectionFactory.closeConnection(conexao, pstm);
+        return instance;
+    }
+
+    private ColaboradorDAO() {
+        entityManager = getEntityManager();
+    }
+    
+    private EntityManager getEntityManager() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Mercado_PU");
+        
+        if (entityManager == null) {
+            entityManager = factory.createEntityManager();
+        }
+        
+        return entityManager;
+    }
+    
+    @Override
+    public void create(Colaborador objeto) {
+        try {
+            entityManager.getTransaction().begin();
+            entityManager.persist(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
     }
 
     @Override
     public Colaborador retrive(int codigo) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT endereco_id, id, nome, fone1, fone2, complementoEndereco, email, dataCadastro, observacao, status, login, senha FROM colaborador WHERE id = ?";
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, codigo);
-            rst = pstm.executeQuery();
-            
-            Colaborador colaborador = new Colaborador();
-            
-            while(rst.next()) {
-                colaborador.setId(rst.getInt("id"));
-                colaborador.setNome(rst.getString("nome"));
-                colaborador.setFone1(rst.getString("fone1"));
-                colaborador.setFone2(rst.getString("fone2"));
-                colaborador.setComplementoEndereco(rst.getString("complementoEndereco"));
-                colaborador.setEmail(rst.getString("email"));
-                colaborador.setDataCadastro(rst.getDate("dataCadastro"));
-                colaborador.setObservacao(rst.getString("observacao"));
-                colaborador.setStatus(rst.getString("status"));
-                colaborador.setLogin(rst.getString("login"));
-                colaborador.setSenha(rst.getString("senha"));
-                
-                Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
-                endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
-                colaborador.setEndereco(endereco);
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return colaborador;
-            
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
-        }
+        return entityManager.find(Colaborador.class, codigo);
     }
 
     @Override
     public Colaborador retrive(String descricao) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT endereco_id, id, nome, fone1, fone2, complementoEndereco, email, dataCadastro, observacao, status, login, senha FROM colaborador WHERE nome = ?";
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, descricao);
-            rst = pstm.executeQuery();
-            
-            Colaborador colaborador = new Colaborador();
-            
-            while(rst.next()) {
-                colaborador.setId(rst.getInt("id"));
-                colaborador.setNome(rst.getString("nome"));
-                colaborador.setFone1(rst.getString("fone1"));
-                colaborador.setFone2(rst.getString("fone2"));
-                colaborador.setComplementoEndereco(rst.getString("complementoEndereco"));
-                colaborador.setEmail(rst.getString("email"));
-                colaborador.setDataCadastro(rst.getDate("dataCadastro"));
-                colaborador.setObservacao(rst.getString("observacao"));
-                colaborador.setStatus(rst.getString("status"));
-                colaborador.setLogin(rst.getString("login"));
-                colaborador.setSenha(rst.getString("senha"));
-                
-                Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
-                endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
-                colaborador.setEndereco(endereco);
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return colaborador;
-            
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
-        }
-    }
+        Colaborador colaborador = entityManager.createQuery("SELECT c FROM Colaborador c WHERE c.descricao = :parDesc", Colaborador.class).setParameter("parDesc", descricao).getSingleResult();
 
+        return colaborador;
+    }
     @Override
     public List<Colaborador> retrive() {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT endereco_id, id, nome, fone1, fone2, complementoEndereco, email, dataCadastro, observacao, status, login, senha FROM colaborador";
-        
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
-        
-        List<Colaborador> listaColaborador = new ArrayList<>();
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            rst = pstm.executeQuery();
+        List<Colaborador> colaboradores;
             
-            while(rst.next()) {
-                Colaborador colaborador = new Colaborador();
-                
-                colaborador.setId(rst.getInt("id"));
-                colaborador.setNome(rst.getString("nome"));
-                colaborador.setFone1(rst.getString("fone1"));
-                colaborador.setFone2(rst.getString("fone2"));
-                colaborador.setComplementoEndereco(rst.getString("complementoEndereco"));
-                colaborador.setEmail(rst.getString("email"));
-                colaborador.setDataCadastro(rst.getDate("dataCadastro"));
-                colaborador.setObservacao(rst.getString("observacao"));
-                colaborador.setStatus(rst.getString("status"));
-                colaborador.setLogin(rst.getString("login"));
-                colaborador.setSenha(rst.getString("senha"));
-                
-                Endereco endereco = new Endereco();
-                EnderecoDAO  enderecoDAO = EnderecoDAO.getInstance();
-                endereco = enderecoDAO.retrive(rst.getInt("endereco_id"));
-                colaborador.setEndereco(endereco);
-                
-                listaColaborador.add(colaborador);
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return listaColaborador;
-            
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
-        }
+        colaboradores = entityManager.createQuery("SELECT c FROM EnderecoColaborador c", Colaborador.class).getResultList();
+        
+        return colaboradores;
     }
 
     @Override
     public void update(Colaborador objeto) {
-       Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "UPDATE colaborador SET endereco_id = ?, nome = ?, fone1 = ?, fone2 = ?, complementoEndereco = ?, email = ?, dataCadastro = ?, observacao = ?, status = ?, login = ?, senha = ? WHERE id = ?";
-        
-        PreparedStatement pstm = null;
-        
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, objeto.getEndereco().getId());
-            pstm.setString(2, objeto.getNome());
-            pstm.setString(3, objeto.getFone1());
-            pstm.setString(4, objeto.getFone2());
-            pstm.setString(5, objeto.getComplementoEndereco());
-            pstm.setString(6, objeto.getEmail());
-            pstm.setDate(7, new java.sql.Date(objeto.getDataCadastro().getTime()));
-            pstm.setString(8, objeto.getObservacao());
-            pstm.setString(9, objeto.getStatus());
-            pstm.setString(10, objeto.getLogin());
-            pstm.setString(11, objeto.getSenha());
-            pstm.setInt(12, objeto.getId());
-            
-            pstm.executeUpdate();
-        } catch (SQLException ex) {
+            entityManager.getTransaction().begin();
+            entityManager.merge(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
             ex.printStackTrace();
+            entityManager.getTransaction().rollback();   
         }
-        
-        ConnectionFactory.closeConnection(conexao, pstm);
     }
 
     @Override
-    public void delete(Colaborador objeto) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "DELETE FROM colaborador WHERE id = ?";
-        PreparedStatement pstm = null; 
-        
+    public void delete(Colaborador objeto) {  
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, objeto.getId());
-            
-        } catch (SQLException ex) {
-            ex.printStackTrace();                       
+            entityManager.getTransaction().begin();
+            objeto = entityManager.find(Colaborador.class, objeto.getId());
+            entityManager.remove(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            entityManager.getTransaction().rollback();
         }
-        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }
