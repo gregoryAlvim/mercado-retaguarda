@@ -12,7 +12,10 @@ import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 public class ControllerCadCliente implements ActionListener {
@@ -59,19 +62,13 @@ public class ControllerCadCliente implements ActionListener {
         telaCliente.getTextoEndereco().setEnabled(false);
     }
     
-    public static String formatarData(String data) {
-        // Verifica se a data tem o tamanho correto
-        if (data.length() != 10) {
-            return null;
-        }
+    public static String formatarData(String dataParam) {
+        DateTimeFormatter formatoAtual = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+        DateTimeFormatter formatoDesejado = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        // Extrai o dia, mês e ano da data
-        String ano = data.substring(0, 4);
-        String mes = data.substring(5, 7);
-        String dia = data.substring(8);
-
-        // Formata a data com barras
-        return dia + "/" + mes + "/" + ano;
+        LocalDateTime data = LocalDateTime.parse(dataParam, formatoAtual);
+        String dataFormatada = data.format(formatoDesejado);
+        return dataFormatada;
     }
 
     public static String formatarCPF(String cpf) {
@@ -120,6 +117,7 @@ public class ControllerCadCliente implements ActionListener {
         } else if (acao.getSource() == telaCliente.getCancelar()) {
             utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
             utilities.Utils.ligaDesliga(false, telaCliente.getPainelDados());
+            enableDisable(false);
      
 
         } else if (acao.getSource() == telaCliente.getBuscar()) {
@@ -134,6 +132,7 @@ public class ControllerCadCliente implements ActionListener {
 
                 utilities.Utils.ativa(false, telaCliente.getPainelBotoes());
                 utilities.Utils.ligaDesliga(true, telaCliente.getPainelDados());
+                enableDisable(true);
 
                 telaCliente.getTextoId().setText(cliente.getId() + "");
                 telaCliente.getTextoNome().setText(cliente.getNome());
@@ -151,7 +150,7 @@ public class ControllerCadCliente implements ActionListener {
 
                 enderecoLocal = cliente.getEndereco();
 
-                telaCliente.getjFormattedTextDataNascimento().setText(formatarData(cliente.getDataNascimento() + ""));
+                telaCliente.getjFormattedTextDataNascimento().setText(cliente.getDataNascimento() + "");
                 
                 telaCliente.getTextoDataCadastro().setText(formatarData(cliente.getDataCadastro() + ""));
                 dataFormatada = telaCliente.getTextoDataCadastro().getText();
@@ -236,6 +235,7 @@ public class ControllerCadCliente implements ActionListener {
 
                 utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
                 utilities.Utils.ligaDesliga(true, telaCliente.getPainelDados());
+                enableDisable(false);
 
             }
 
