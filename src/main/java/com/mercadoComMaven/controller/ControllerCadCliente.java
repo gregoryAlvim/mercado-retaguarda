@@ -41,25 +41,23 @@ public class ControllerCadCliente implements ActionListener {
 
         telaCliente.getTextoEndereco().setText(fullAddress);
     }
-    
-    public void setAllInputsEmpty() {
-        telaCliente.getTextoNome().requestFocus();
-        telaCliente.getTextoNome().setText("");
-        telaCliente.getTextoTelefone1().setText("");
-        telaCliente.getTextoTelefone2().setText("");
-        telaCliente.getTextoRG().setText("");
-        telaCliente.getTextoCPF().setText("");
-        telaCliente.getTextoEmail().setText("");
-        telaCliente.getTextoEndereco().setText("");
-        telaCliente.getjFormattedTextDataNascimento().setText("");
-        telaCliente.getTextoDataCadastro().setText("");
-        telaCliente.getComboStatus().setSelectedIndex(0);
-        telaCliente.getTextoObservacao().setText("");
-        telaCliente.getTextoComplemento().setText("");
-        telaCliente.getTextoId().setText("");
-    }
 
-    ;
+    public void enableDisable(boolean estado) {;
+        telaCliente.getTextoNome().setEnabled(estado);
+        telaCliente.getTextoTelefone1().setEnabled(estado);
+        telaCliente.getTextoTelefone2().setEnabled(estado);
+        telaCliente.getTextoRG().setEnabled(estado);
+        telaCliente.getTextoCPF().setEnabled(estado);
+        telaCliente.getTextoEmail().setEnabled(estado);
+        telaCliente.getjFormattedTextDataNascimento().setEnabled(estado);
+        telaCliente.getTextoDataCadastro().setEnabled(false);
+        telaCliente.getjButtonBuscarEndereco().setEnabled(estado);
+        telaCliente.getComboSexo().setEnabled(estado);
+        telaCliente.getComboStatus().setEnabled(estado);
+        telaCliente.getTextoObservacao().setEnabled(estado);
+        telaCliente.getTextoComplemento().setEnabled(estado);
+        telaCliente.getTextoEndereco().setEnabled(false);
+    }
     
     public static String formatarData(String data) {
         // Verifica se a data tem o tamanho correto
@@ -100,8 +98,9 @@ public class ControllerCadCliente implements ActionListener {
         telaCliente.getSair().addActionListener(this);
         telaCliente.getjButtonBuscarEndereco().addActionListener(this);
 
-        utilities.Utils.ativa(false, telaCliente.getPainelBotoes());
+        utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
         utilities.Utils.ligaDesliga(false, telaCliente.getPainelDados());
+        enableDisable(false);
     }
 
     @Override
@@ -109,16 +108,19 @@ public class ControllerCadCliente implements ActionListener {
         if (acao.getSource() == telaCliente.getNovo()) {
             utilities.Utils.ativa(false, telaCliente.getPainelBotoes());
             utilities.Utils.ligaDesliga(true, telaCliente.getPainelDados());
+            enableDisable(true);
 
             DateFormat dataCadastro = new SimpleDateFormat("dd/MM/yyyy");
             Date data = new Date();
             dataFormatada = dataCadastro.format(data);
             telaCliente.getTextoDataCadastro().setText(dataFormatada);
+            
+            
 
         } else if (acao.getSource() == telaCliente.getCancelar()) {
             utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
             utilities.Utils.ligaDesliga(false, telaCliente.getPainelDados());
-            setAllInputsEmpty();
+     
 
         } else if (acao.getSource() == telaCliente.getBuscar()) {
 
@@ -230,8 +232,6 @@ public class ControllerCadCliente implements ActionListener {
                     cliente.setId(Integer.parseInt(telaCliente.getTextoId().getText()));
                     ClienteService.atualizar(cliente);
                 }
-
-                setAllInputsEmpty();
      
 
                 utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
