@@ -35,10 +35,10 @@ public class Produto implements Serializable{
     private float estoqueMaximo;
     
     @Column
-    private String undCompra;
+    private String unidadeCompra;
     
     @Column
-    private String undVenda;
+    private String unidadeVenda;
     
     @Column
     private String barraEntrada;
@@ -139,21 +139,22 @@ public class Produto implements Serializable{
         this.estoqueMaximo = estoqueMaximo;
     }
 
-    public String getUndCompra() {
-        return undCompra;
+    public String getUnidadeCompra() {
+        return unidadeCompra;
     }
 
-    public void setUndCompra(String undCompra) {
-        this.undCompra = undCompra;
+    public void setUnidadeCompra(String unidadeCompra) {
+        this.unidadeCompra = unidadeCompra;
     }
 
-    public String getUndVenda() {
-        return undVenda;
+    public String getUnidadeVenda() {
+        return unidadeVenda;
     }
 
-    public void setUndVenda(String undVenda) {
-        this.undVenda = undVenda;
+    public void setUnidadeVenda(String uniddadeVenda) {
+        this.unidadeVenda = uniddadeVenda;
     }
+
 
     public String getBarraEntrada() {
         return barraEntrada;
@@ -196,8 +197,8 @@ public class Produto implements Serializable{
                 + ";\n valorVenda: " + this.getValorVenda() 
                 + ";\n estoqueMinimo: " + this.getEstoqueMinimo() 
                 + ";\n estoqueMaximo: " + this.getEstoqueMaximo() 
-                + ";\n undCompra: " + this.getUndCompra() 
-                + ";\n undVenda: " + this.getUndVenda() 
+                + ";\n undCompra: " + this.getUnidadeCompra() 
+                + ";\n undVenda: " + this.getUnidadeVenda() 
                 + ";\n barraEntrada: " + this.getBarraEntrada() 
                 + ";\n barraSaida: " + this.getBarraSaida() 
                 + ";\n dataCadastro: " + this.getDataCadastro() 

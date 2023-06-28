@@ -38,7 +38,7 @@
               <Component id="jPanel2" min="-2" pref="53" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="painelDados" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="41" max="32767" attributes="0"/>
+              <EmptySpace pref="38" max="32767" attributes="0"/>
               <Component id="painelBotoes" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -92,9 +92,10 @@
               <Font name="Trebuchet MS" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Create.png"/>
+              <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Create.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Novo"/>
+            <Property name="actionCommand" type="java.lang.String" value="0"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NovoActionPerformed"/>
@@ -109,9 +110,10 @@
               <Font name="Trebuchet MS" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\OK.png"/>
+              <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\OK.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Gravar"/>
+            <Property name="actionCommand" type="java.lang.String" value="1"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GravarActionPerformed"/>
@@ -126,9 +128,10 @@
               <Font name="Trebuchet MS" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Delete.png"/>
+              <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Cancel.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
+            <Property name="actionCommand" type="java.lang.String" value="1"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CancelarActionPerformed"/>
@@ -143,9 +146,10 @@
               <Font name="Trebuchet MS" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Find.png"/>
+              <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Find.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Buscar"/>
+            <Property name="actionCommand" type="java.lang.String" value="0"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BuscarActionPerformed"/>
@@ -160,9 +164,10 @@
               <Font name="Trebuchet MS" size="12" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Exit.png"/>
+              <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Exit.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sair"/>
+            <Property name="actionCommand" type="java.lang.String" value="0"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SairActionPerformed"/>
@@ -339,7 +344,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButtonBuscarMarca" alignment="3" max="32767" attributes="0"/>
+                              <Component id="jButtonBuscarMarca" alignment="3" pref="35" max="32767" attributes="0"/>
                               <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="textoMarca" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -646,7 +651,7 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/Find.png"/>
+              <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Find.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton6"/>
           </Properties>
@@ -657,7 +662,7 @@
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/Find.png"/>
+              <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Find.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jButton6"/>
           </Properties>
