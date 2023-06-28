@@ -61,6 +61,7 @@ public class ControllerCadColaborador implements ActionListener {
         telaColaborador.getjTextFieldObservacao().setEnabled(estado);
         telaColaborador.getjTextFieldDataCadastro().setEnabled(false);
         telaColaborador.getjComboBoxStatus().setEnabled(estado);
+        telaColaborador.getjTextFieldDataCadastro().setEnabled(false);
     }
     
     public void setAllInputsEmpty() {
