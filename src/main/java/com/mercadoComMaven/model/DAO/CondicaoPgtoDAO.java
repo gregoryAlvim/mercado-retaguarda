@@ -1,175 +1,97 @@
 
 package com.mercadoComMaven.model.DAO;
 
-import com.mercadoComMaven.modelBO.CondicaoPgto;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
+import com.mercadoComMaven.modelBO.CondicaoPagamento;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
-public class CondicaoPgtoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.CondicaoPgto>{
+public class CondicaoPgtoDAO implements InterfaceDAO<com.mercadoComMaven.modelBO.CondicaoPagamento>{
 
-    @Override
-    public void create(CondicaoPgto objeto) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "INSERT INTO condicaopagamento (descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela, status) VALUES (?, ?, ?, ?, ?)";
-        
-        PreparedStatement pstm = null;
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, objeto.getDescricaoCondicao());
-            pstm.setInt(2, objeto.getNumeroParcelas());
-            pstm.setInt(3, objeto.getDiasPrimeiraParcela());
-            pstm.setInt(4, objeto.getDiaEntreParcela());
-            pstm.setString(5, objeto.getStatus());
-            pstm.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        //Novo ---------------------------
+    private static CondicaoPgtoDAO instance;
+    protected EntityManager entityManager;
+    
+    public static CondicaoPgtoDAO getInstance() {
+        if (instance == null) {
+            instance = new CondicaoPgtoDAO();
         }
         
-        ConnectionFactory.closeConnection(conexao, pstm);
+        return instance;
     }
 
-    @Override
-    public CondicaoPgto retrive(int codigo) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT id, descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela, status FROM condicaopagamento WHERE id = ?";
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
+    private CondicaoPgtoDAO() {
+        entityManager = getEntityManager();
+    }
+    
+    private EntityManager getEntityManager() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("Mercado_PU");
         
+        if (entityManager == null) {
+            entityManager = factory.createEntityManager();
+        }
+        
+        return entityManager;
+    }
+    //Novo ---------------------------
+    
+    @Override
+    public void create(CondicaoPagamento objeto) {
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, codigo);
-            rst = pstm.executeQuery();
-            CondicaoPgto condicaoPgto = new CondicaoPgto();
-            
-            while(rst.next()) {
-                condicaoPgto.setId(rst.getInt("id"));
-                condicaoPgto.setDescricaoCondicao(rst.getString("descricaoCondicao"));
-                condicaoPgto.setNumeroParcelas(rst.getInt("numeroParcelas"));
-                condicaoPgto.setDiasPrimeiraParcela(rst.getInt("diasPrimeiraParcela"));
-                condicaoPgto.setDiaEntreParcela(rst.getInt("diasEntreParcela"));
-                condicaoPgto.setStatus(rst.getString("status"));
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return condicaoPgto;
-            
-        } catch (SQLException ex) {
+            entityManager.getTransaction().begin();
+            entityManager.persist(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
             ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
+            entityManager.getTransaction().rollback();
         }
     }
 
     @Override
-    public CondicaoPgto retrive(String descricao) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT id, descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela, status FROM condicaopagamento WHERE descricaoCondicao = ?";
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
+    public CondicaoPagamento retrive(int codigo) {
+        return entityManager.find(CondicaoPagamento.class, codigo);
+    }
+
+    @Override
+    public CondicaoPagamento retrive(String descricao) {
+        CondicaoPagamento condicaoPgto = entityManager.createQuery("SELECT cp FROM CondicaoPagamento cp WHERE cp.descricaoCondicao = :parDescricao", CondicaoPagamento.class).setParameter("parDescricao", descricao).getSingleResult();
+
+        return condicaoPgto;
+    }
+
+    @Override
+    public List<CondicaoPagamento> retrive() {
+        List<CondicaoPagamento> condicoesPgto;
+            
+        condicoesPgto = entityManager.createQuery("SELECT cp FROM CondicaoPagamento cp", CondicaoPagamento.class).getResultList();
         
+        return condicoesPgto;
+    }
+
+    @Override
+    public void update(CondicaoPagamento objeto) {
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, descricao);
-            rst = pstm.executeQuery();
-            CondicaoPgto condicaoPgto = new CondicaoPgto();
-            
-            while(rst.next()) {
-                condicaoPgto.setId(rst.getInt("id"));
-                condicaoPgto.setDescricaoCondicao(rst.getString("descricaoCondicao"));
-                condicaoPgto.setNumeroParcelas(rst.getInt("numeroParcelas"));
-                condicaoPgto.setDiasPrimeiraParcela(rst.getInt("diasPrimeiraParcela"));
-                condicaoPgto.setDiaEntreParcela(rst.getInt("diasEntreParcela"));
-                condicaoPgto.setStatus(rst.getString("status"));
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return condicaoPgto;
-            
-        } catch (SQLException ex) {
+            entityManager.getTransaction().begin();
+            entityManager.merge(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
             ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
+            entityManager.getTransaction().rollback();   
         }
     }
 
     @Override
-    public List<CondicaoPgto> retrive() {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "SELECT id, descricaoCondicao, numeroParcelas, diasPrimeiraParcela, diasEntreParcela, status FROM condicaopagamento";
-        PreparedStatement pstm = null;
-        ResultSet rst = null;
-        
-        List<CondicaoPgto> listaCondicaoPgto = new ArrayList<>();
-        
+    public void delete(CondicaoPagamento objeto) {
         try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            rst = pstm.executeQuery();
-
-            
-            while(rst.next()) {
-                CondicaoPgto condicaoPgto = new CondicaoPgto();
-                condicaoPgto.setId(rst.getInt("id"));
-                condicaoPgto.setDescricaoCondicao(rst.getString("descricaoCondicao"));
-                condicaoPgto.setNumeroParcelas(rst.getInt("numeroParcelas"));
-                condicaoPgto.setDiasPrimeiraParcela(rst.getInt("diasPrimeiraParcela"));
-                condicaoPgto.setDiaEntreParcela(rst.getInt("diasEntreParcela"));
-                condicaoPgto.setStatus(rst.getString("status"));
-                
-                listaCondicaoPgto.add(condicaoPgto);
-            }
-            
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return listaCondicaoPgto;
-            
-        } catch (SQLException ex) {
+            entityManager.getTransaction().begin();
+            objeto = entityManager.find(CondicaoPagamento.class, objeto.getId());
+            entityManager.remove(objeto);
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
             ex.printStackTrace();
-            ConnectionFactory.closeConnection(conexao, pstm, rst);
-            return null;
+            entityManager.getTransaction().rollback();
         }
-    }
-
-    @Override
-    public void update(CondicaoPgto objeto) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "UPDATE condicaopagamento SET descricaoCondicao = ?, numeroParcelas = ?, diasPrimeiraParcela = ?, diasEntreParcela = ?, status = ? WHERE id = ?";
-        PreparedStatement pstm = null;
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setString(1, objeto.getDescricaoCondicao());
-            pstm.setInt(2, objeto.getNumeroParcelas());
-            pstm.setInt(3, objeto.getDiasPrimeiraParcela());
-            pstm.setInt(4, objeto.getDiaEntreParcela());
-            pstm.setString(5, objeto.getStatus());
-            pstm.setInt(6, objeto.getId());
-            pstm.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        
-        ConnectionFactory.closeConnection(conexao, pstm);
-    }
-
-    @Override
-    public void delete(CondicaoPgto objeto) {
-        Connection conexao = ConnectionFactory.getConnection();
-        String sqlExecutar = "DELETE condicaopagamento WHERE id = ?";
-        PreparedStatement pstm = null;
-        
-        try {
-            pstm = conexao.prepareStatement(sqlExecutar);
-            pstm.setInt(1, objeto.getId());
-            pstm.executeUpdate();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        
-        ConnectionFactory.closeConnection(conexao, pstm);
     }
     
 }

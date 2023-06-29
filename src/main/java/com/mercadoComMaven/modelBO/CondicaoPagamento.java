@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CondicaoPgto implements Serializable{
+public class CondicaoPagamento implements Serializable{
     
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class CondicaoPgto implements Serializable{
    private int diasPrimeiraParcela;
    
    @Column
-   private int diaEntreParcela;
+   private int diasEntreParcela;
    
    @Column
    private String status;
@@ -29,14 +29,14 @@ public class CondicaoPgto implements Serializable{
    @Column
    private String descricaoCondicao;
 
-    public CondicaoPgto() {
+    public CondicaoPagamento() {
     }
 
-    public CondicaoPgto(int id, int numeroParcelas, int diasPrimeiraParcela, int diaEntreParcela, String status, String descricaoCondicao) {
+    public CondicaoPagamento(int id, int numeroParcelas, int diasPrimeiraParcela, int diaEntreParcela, String status, String descricaoCondicao) {
         this.id = id;
         this.numeroParcelas = numeroParcelas;
         this.diasPrimeiraParcela = diasPrimeiraParcela;
-        this.diaEntreParcela = diaEntreParcela;
+        this.diasEntreParcela = diaEntreParcela;
         this.status = status;
         this.descricaoCondicao = descricaoCondicao;
     }
@@ -66,11 +66,11 @@ public class CondicaoPgto implements Serializable{
     }
 
     public int getDiaEntreParcela() {
-        return diaEntreParcela;
+        return diasEntreParcela;
     }
 
     public void setDiaEntreParcela(int diaEntreParcela) {
-        this.diaEntreParcela = diaEntreParcela;
+        this.diasEntreParcela = diaEntreParcela;
     }
 
     public String getStatus() {
