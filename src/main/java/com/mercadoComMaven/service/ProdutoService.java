@@ -7,33 +7,27 @@ import java.util.List;
 public class ProdutoService {
 
     public static void criar(Produto objeto) {
-        ProdutoDAO produtoDAO = new ProdutoDAO();
-        produtoDAO.create(objeto);
+        ProdutoDAO.getInstance().create(objeto);
     }
 
     public static Produto buscar(int codigo) {
-        ProdutoDAO produtoDAO = new ProdutoDAO();
-        return produtoDAO.retrive(codigo);
+        return ProdutoDAO.getInstance().retrive(codigo);
     }
 
     public static Produto buscar(String descricao) {
-        ProdutoDAO produtoDAO = new ProdutoDAO();
-        return produtoDAO.retrive(descricao);    
+        return ProdutoDAO.getInstance().retrive(descricao);    
     }
 
     public static List<Produto> buscar() {
-        ProdutoDAO produtoDAO = new ProdutoDAO();
-        return produtoDAO.retrive();   
+        return ProdutoDAO.getInstance().retrive();   
     }
 
     public static void atualizar(Produto objeto) {
-        ProdutoDAO produtoDAO = new ProdutoDAO();
-        produtoDAO.update(objeto);   
+        ProdutoDAO.getInstance().update(objeto);   
     }
 
     public static void excluir(Produto objeto) {
-        ProdutoDAO produtoDAO = new ProdutoDAO();
-        produtoDAO.delete(objeto);   
+        ProdutoDAO.getInstance().delete(objeto);   
     }
     
 }

@@ -2,7 +2,6 @@ package com.mercadoComMaven.controller;
 
 import com.mercadoComMaven.modelBO.Classe;
 import com.mercadoComMaven.modelBO.Marca;
-import com.mercadoComMaven.modelBO.Produto;
 import com.mercadoComMaven.view.FormBuscaClasse;
 import com.mercadoComMaven.view.FormBuscaMarca;
 import com.mercadoComMaven.view.FormBuscaProduto;
