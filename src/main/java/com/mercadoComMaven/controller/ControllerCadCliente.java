@@ -150,7 +150,7 @@ public class ControllerCadCliente implements ActionListener {
 
                 enderecoLocal = cliente.getEndereco();
 
-                telaCliente.getjFormattedTextDataNascimento().setText(cliente.getDataNascimento() + "");
+                telaCliente.getjFormattedTextDataNascimento().setText(formatarData(cliente.getDataNascimento() + ""));
                 
                 telaCliente.getTextoDataCadastro().setText(formatarData(cliente.getDataCadastro() + ""));
                 dataFormatada = telaCliente.getTextoDataCadastro().getText();
