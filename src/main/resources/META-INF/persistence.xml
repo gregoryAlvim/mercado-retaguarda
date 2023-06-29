@@ -9,7 +9,6 @@
     <class>com.mercadoComMaven.modelBO.Cliente</class>
     <class>com.mercadoComMaven.modelBO.Colaborador</class>
     <class>com.mercadoComMaven.modelBO.Compra</class>
-    <class>com.mercadoComMaven.modelBO.CondicaoPgto</class>
     <class>com.mercadoComMaven.modelBO.CupomFiscal</class>
     <class>com.mercadoComMaven.modelBO.Fornecedor</class>
     <class>com.mercadoComMaven.modelBO.HistoricoMovimentacao</class>
@@ -19,6 +18,7 @@
     <class>com.mercadoComMaven.modelBO.Pagamento</class>
     <class>com.mercadoComMaven.modelBO.Pagar</class>
     <class>com.mercadoComMaven.modelBO.Produto</class>
+    <class>com.mercadoComMaven.modelBO.CondicaoPagamento</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/retaguarda?verifyServerCertificate=false&amp;useSSL=false&amp;requireSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC&amp;zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

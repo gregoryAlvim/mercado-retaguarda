@@ -1,6 +1,6 @@
 package com.mercadoComMaven.controller;
 
-import com.mercadoComMaven.modelBO.CondicaoPgto;
+import com.mercadoComMaven.modelBO.CondicaoPagamento;
 import com.mercadoComMaven.view.FormBuscaCondicaoPgto;
 import com.mercadoComMaven.view.ViewCadastroCondicaoPgto;
 import com.mercadoComMaven.service.CondicaoPgtoService;
@@ -79,14 +79,12 @@ public class ControllerCadCondicaoPgto implements ActionListener {
             
         } else if (acao.getSource() == telaCondicaoPgto.getBuscar()) {
             
-            this.codigo = 0;
-            
             FormBuscaCondicaoPgto telaBuscaPgto = new FormBuscaCondicaoPgto(telaCondicaoPgto, true);
             ControllerBuscaCondicaoPgto controllerBuscaPgto = new ControllerBuscaCondicaoPgto(telaBuscaPgto);
             telaBuscaPgto.setVisible(true);
             
             if(codigo != 0){
-                CondicaoPgto condicaoPgto = new CondicaoPgto();
+                CondicaoPagamento condicaoPgto = new CondicaoPagamento();
                 condicaoPgto = CondicaoPgtoService.buscar(codigo);
                 
                 utilities.Utils.ativa(false, telaCondicaoPgto.getPainelBotoes());
@@ -104,11 +102,7 @@ public class ControllerCadCondicaoPgto implements ActionListener {
                     telaCondicaoPgto.getjComboBoxStatus().setSelectedIndex(1);
                 }
                 
-                telaCondicaoPgto.getjSpinnerDiasEntreParcelas().setEnabled(true);
-                telaCondicaoPgto.getjTextFieldDescricao().setEnabled(true);
-                telaCondicaoPgto.getjSpinnerQuantidadeParcelas().setEnabled(true);
-                telaCondicaoPgto.getjSpinnerDiasPrimeiraPercela().setEnabled(true);
-                telaCondicaoPgto.getjComboBoxStatus().setEnabled(true);
+                enableDisable(true);
             }
         
         } else if (acao.getSource() == telaCondicaoPgto.getGravar()) {
@@ -123,7 +117,7 @@ public class ControllerCadCondicaoPgto implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Atributo Dias (Entre parcelas) é Obrigatório");
             } else {
                 
-                CondicaoPgto condicaoPgto = new CondicaoPgto();
+                CondicaoPagamento condicaoPgto = new CondicaoPagamento();
               
                 condicaoPgto.setDescricaoCondicao(telaCondicaoPgto.getjTextFieldDescricao().getText());
                 
