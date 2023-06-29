@@ -12,7 +12,7 @@ public class Fornecedor extends Pessoa implements Serializable{
     private String cnpj;
     
     @Column
-    private String inscEstadual;
+    private String inscricaoEstadual;
     
     @Column
     private String contato;
@@ -32,7 +32,7 @@ public class Fornecedor extends Pessoa implements Serializable{
     public Fornecedor(String cnpj, String inscEstadual, String contato, String razaoSocial, String cpf, String rg, int id, String nome, String fone1, String fone2, String email, String complementoEndereco, String observacao, String status, Date dtCadastro, Endereco endereco) {
         super(id, nome, fone1, fone2, email, complementoEndereco, observacao, status, dtCadastro, endereco);
         this.cnpj = cnpj;
-        this.inscEstadual = inscEstadual;
+        this.inscricaoEstadual = inscEstadual;
         this.contato = contato;
         this.razaoSocial = razaoSocial;
         this.cpf = cpf;
@@ -48,11 +48,11 @@ public class Fornecedor extends Pessoa implements Serializable{
     }
 
     public String getInscEstadual() {
-        return inscEstadual;
+        return inscricaoEstadual;
     }
 
     public void setInscEstadual(String inscEstadual) {
-        this.inscEstadual = inscEstadual;
+        this.inscricaoEstadual = inscEstadual;
     }
 
     public String getContato() {
