@@ -11,7 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 
@@ -80,19 +83,13 @@ public class ControllerCadColaborador implements ActionListener {
         telaColaborador.getjTextFieldId().setText("");
     }
     
-    public static String formatarData(String data) {
-        // Verifica se a data tem o tamanho correto
-        if (data.length() != 10) {
-            return null;
-        }
+     public static String formatarData(String dataParam) {
+        DateTimeFormatter formatoAtual = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+        DateTimeFormatter formatoDesejado = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        // Extrai o dia, mês e ano da data
-        String ano = data.substring(0, 4);
-        String mes = data.substring(5, 7);
-        String dia = data.substring(8);
-
-        // Formata a data com barras
-        return dia + "/" + mes + "/" + ano;
+        LocalDateTime data = LocalDateTime.parse(dataParam, formatoAtual);
+        String dataFormatada = data.format(formatoDesejado);
+        return dataFormatada;
     }
     
     public ControllerCadColaborador(ViewCadastroColaborador telaColaborador) {
