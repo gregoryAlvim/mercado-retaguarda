@@ -110,7 +110,6 @@ public class FormBuscaBairro extends javax.swing.JDialog {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        Sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Exit.png")); // NOI18N
         Sair.setText("Sair");
         Sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +117,6 @@ public class FormBuscaBairro extends javax.swing.JDialog {
             }
         });
 
-        Carregar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
         Carregar.setText("Carregar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
