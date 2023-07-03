@@ -72,6 +72,7 @@ public class ControllerCadCliente implements ActionListener {
     }
 
     public static String formatarCPF(String cpf) {
+        
         // Remove todos os caracteres não numéricos do CPF
         cpf = cpf.replaceAll("[^0-9]", "");
 
@@ -175,12 +176,15 @@ public class ControllerCadCliente implements ActionListener {
 
         } else if (acao.getSource() == telaCliente.getGravar()) {
             if (telaCliente.getTextoRG().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getTextoCPF().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getjFormattedTextDataNascimento().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getTextoTelefone1().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getTextoNome().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getTextoEmail().getText().trim().equalsIgnoreCase("")) {
+                || telaCliente.getTextoCPF().getText().trim().equalsIgnoreCase("")
+                || telaCliente.getjFormattedTextDataNascimento().getText().trim().equalsIgnoreCase("")
+                || telaCliente.getTextoTelefone1().getText().trim().equalsIgnoreCase("")
+                || telaCliente.getTextoNome().getText().trim().equalsIgnoreCase("")
+                || telaCliente.getTextoEmail().getText().trim().equalsIgnoreCase("")) {
+                
                 JOptionPane.showMessageDialog(null, "Há campos obrigatórios não preenchidos");
+                
+                
             } else {
 
                 Cliente cliente = new Cliente();
@@ -203,6 +207,19 @@ public class ControllerCadCliente implements ActionListener {
                 } catch (ParseException ex) {
                     JOptionPane.showMessageDialog(null, "Data de nascimento inválida!");
                 }
+                
+                try {
+                    String cpf = telaCliente.getTextoCPF().getText().replaceAll("\\D", "");
+                    if (cpf.length() != 11) {
+                        throw new IllegalArgumentException("CPF inválido!");
+                    }
+
+                    // Restante do código aqui...
+
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                }
+
 
                 //Tratativa status 1 para verdadeiro e 0 para falso
                 if (telaCliente.getComboStatus().getSelectedIndex() == 0) {
@@ -231,7 +248,9 @@ public class ControllerCadCliente implements ActionListener {
                     cliente.setId(Integer.parseInt(telaCliente.getTextoId().getText()));
                     ClienteService.atualizar(cliente);
                 }
-     
+                
+                telaCliente.getTextoObservacao().setText("");
+                telaCliente.getTextoComplemento().setText("");
 
                 utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
                 utilities.Utils.ligaDesliga(true, telaCliente.getPainelDados());
