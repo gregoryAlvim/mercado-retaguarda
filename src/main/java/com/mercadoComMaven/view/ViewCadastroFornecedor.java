@@ -80,11 +80,11 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         this.Sair = Sair;
     }
 
-    public JTextField getTextoCnpj() {
+    public JFormattedTextField getTextoCnpj() {
         return textoCnpj;
     }
 
-    public void setTextoCnpj(JTextField textoCnpj) {
+    public void setTextoCnpj(JFormattedTextField textoCnpj) {
         this.textoCnpj = textoCnpj;
     }
 
@@ -96,11 +96,11 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         this.textoContato = textoContato;
     }
 
-    public JTextField getTextoCpf() {
+    public JFormattedTextField getTextoCpf() {
         return textoCpf;
     }
 
-    public void setTextoCpf(JTextField textoCpf) {
+    public void setTextoCpf(JFormattedTextField textoCpf) {
         this.textoCpf = textoCpf;
     }
 
@@ -136,11 +136,11 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         this.textoRazao = textoRazao;
     }
 
-    public JTextField getTextoRg() {
+    public JFormattedTextField getTextoRg() {
         return textoRg;
     }
 
-    public void setTextoRg(JTextField textoRg) {
+    public void setTextoRg(JFormattedTextField textoRg) {
         this.textoRg = textoRg;
     }
 
@@ -168,19 +168,19 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         this.textoEndereco = textoEndereco;
     }
 
-    public JTextField getTextoTelefone1() {
+    public JFormattedTextField getTextoTelefone1() {
         return textoTelefone1;
     }
 
-    public void setTextoTelefone1(JTextField textoTelefone1) {
+    public void setTextoTelefone1(JFormattedTextField textoTelefone1) {
         this.textoTelefone1 = textoTelefone1;
     }
 
-    public JTextField getTextoTelefone2() {
+    public JFormattedTextField getTextoTelefone2() {
         return textoTelefone2;
     }
 
-    public void setTextoTelefone2(JTextField textoTelefone2) {
+    public void setTextoTelefone2(JFormattedTextField textoTelefone2) {
         this.textoTelefone2 = textoTelefone2;
     }
 
@@ -210,11 +210,8 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         painelDados = new javax.swing.JPanel();
         textoRazao = new javax.swing.JTextField();
-        textoCnpj = new javax.swing.JTextField();
-        textoRg = new javax.swing.JTextField();
         textoContato = new javax.swing.JTextField();
         textoInsc = new javax.swing.JTextField();
-        textoCpf = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -231,14 +228,17 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         textoComplemento = new javax.swing.JTextField();
         textoEndereco = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        textoTelefone1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         botaoBuscarEndereco = new javax.swing.JButton();
-        textoTelefone2 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         textoId = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         textoObservacao = new javax.swing.JTextField();
+        textoTelefone1 = new javax.swing.JFormattedTextField();
+        textoTelefone2 = new javax.swing.JFormattedTextField();
+        textoCpf = new javax.swing.JFormattedTextField();
+        textoRg = new javax.swing.JFormattedTextField();
+        textoCnpj = new javax.swing.JFormattedTextField();
         painelBotoes = new javax.swing.JPanel();
         Novo = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
@@ -271,22 +271,6 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
             }
         });
 
-        textoCnpj.setBackground(new java.awt.Color(204, 204, 204));
-        textoCnpj.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        textoCnpj.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoCnpjActionPerformed(evt);
-            }
-        });
-
-        textoRg.setBackground(new java.awt.Color(204, 204, 204));
-        textoRg.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        textoRg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoRgActionPerformed(evt);
-            }
-        });
-
         textoContato.setBackground(new java.awt.Color(204, 204, 204));
         textoContato.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         textoContato.addActionListener(new java.awt.event.ActionListener() {
@@ -300,14 +284,6 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         textoInsc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textoInscActionPerformed(evt);
-            }
-        });
-
-        textoCpf.setBackground(new java.awt.Color(204, 204, 204));
-        textoCpf.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        textoCpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoCpfActionPerformed(evt);
             }
         });
 
@@ -376,27 +352,11 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
 
         jLabel13.setText("Telefone 2:");
 
-        textoTelefone1.setBackground(new java.awt.Color(204, 204, 204));
-        textoTelefone1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        textoTelefone1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoTelefone1ActionPerformed(evt);
-            }
-        });
-
         jLabel14.setText("Endereço");
 
         botaoBuscarEndereco.setBackground(new java.awt.Color(204, 204, 204));
-        botaoBuscarEndereco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Find.png"))); // NOI18N
+        botaoBuscarEndereco.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
         botaoBuscarEndereco.setText("jButton6");
-
-        textoTelefone2.setBackground(new java.awt.Color(204, 204, 204));
-        textoTelefone2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        textoTelefone2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoTelefone2ActionPerformed(evt);
-            }
-        });
 
         jLabel15.setText("Complemento:");
 
@@ -419,6 +379,56 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
                 textoObservacaoActionPerformed(evt);
             }
         });
+
+        textoTelefone1.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoTelefone1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textoTelefone1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoTelefone1ActionPerformed(evt);
+            }
+        });
+
+        textoTelefone2.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoTelefone2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textoTelefone2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoTelefone2ActionPerformed(evt);
+            }
+        });
+
+        textoCpf.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        textoRg.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoRg.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#.###.###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textoRg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoRgActionPerformed(evt);
+            }
+        });
+
+        textoCnpj.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoCnpj.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout painelDadosLayout = new javax.swing.GroupLayout(painelDados);
         painelDados.setLayout(painelDadosLayout);
@@ -447,28 +457,8 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addComponent(jLabel6))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelDadosLayout.createSequentialGroup()
-                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addComponent(textoInsc, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8))
-                            .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addComponent(textoCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5)))
-                        .addGap(18, 18, 18)
-                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textoRg, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(painelDadosLayout.createSequentialGroup()
-                            .addComponent(textoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jLabel4)
-                            .addGap(222, 222, 222))
                         .addGroup(painelDadosLayout.createSequentialGroup()
                             .addComponent(textoContato, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
@@ -482,22 +472,42 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(jLabel16)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(textoObservacao, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelDadosLayout.createSequentialGroup()
-                            .addComponent(textoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(botaoBuscarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel15)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(textoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelDadosLayout.createSequentialGroup()
-                            .addComponent(textoTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(32, 32, 32)
-                            .addComponent(jLabel13)
-                            .addGap(18, 18, 18)
-                            .addComponent(textoTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textoObservacao, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(painelDadosLayout.createSequentialGroup()
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(painelDadosLayout.createSequentialGroup()
+                                        .addComponent(textoInsc, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel8))
+                                    .addGroup(painelDadosLayout.createSequentialGroup()
+                                        .addComponent(textoCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel5)))
+                                .addGap(18, 18, 18)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textoRg, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                    .addComponent(textoEmail)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelDadosLayout.createSequentialGroup()
+                                .addComponent(textoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addGap(23, 23, 23)
+                                .addComponent(textoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(painelDadosLayout.createSequentialGroup()
+                        .addComponent(textoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoBuscarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelDadosLayout.createSequentialGroup()
+                        .addComponent(textoTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textoTelefone2)))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         painelDadosLayout.setVerticalGroup(
@@ -514,14 +524,14 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
                     .addComponent(textoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
                     .addComponent(jLabel4)
-                    .addComponent(textoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textoCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel5)
-                    .addComponent(textoRg, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                    .addComponent(textoRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textoCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(textoRazao, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -538,8 +548,8 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13)
-                    .addComponent(textoTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textoTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textoTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -547,7 +557,7 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
                     .addComponent(botaoBuscarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(textoComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         painelBotoes.setBackground(new java.awt.Color(204, 204, 204));
@@ -555,7 +565,6 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
 
         Novo.setBackground(new java.awt.Color(153, 153, 153));
         Novo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Novo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Create.png")); // NOI18N
         Novo.setText("Novo");
         Novo.setActionCommand("0");
         Novo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -568,7 +577,6 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
 
         Cancelar.setBackground(new java.awt.Color(153, 153, 153));
         Cancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Cancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Delete.png")); // NOI18N
         Cancelar.setText("Cancelar");
         Cancelar.setActionCommand("1");
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -580,7 +588,6 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
 
         Gravar.setBackground(new java.awt.Color(153, 153, 153));
         Gravar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Gravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\OK.png")); // NOI18N
         Gravar.setText("Gravar");
         Gravar.setActionCommand("1");
         Gravar.addActionListener(new java.awt.event.ActionListener() {
@@ -592,7 +599,6 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
 
         Buscar.setBackground(new java.awt.Color(153, 153, 153));
         Buscar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Buscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
         Buscar.setText("Buscar");
         Buscar.setActionCommand("0");
         Buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -604,7 +610,6 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
 
         Sair.setBackground(new java.awt.Color(153, 153, 153));
         Sair.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Exit.png")); // NOI18N
         Sair.setText("Sair");
         Sair.setActionCommand("0");
         Sair.addActionListener(new java.awt.event.ActionListener() {
@@ -638,25 +643,9 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textoCnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoCnpjActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoCnpjActionPerformed
-
-    private void textoRgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoRgActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoRgActionPerformed
-
-    private void textoContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoContatoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoContatoActionPerformed
-
     private void textoInscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoInscActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textoInscActionPerformed
-
-    private void textoCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoCpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoCpfActionPerformed
 
     private void textoRazaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoRazaoActionPerformed
         // TODO add your handling code here:
@@ -702,6 +691,14 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoEnderecoActionPerformed
 
+    private void textoIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoIdActionPerformed
+
+    private void textoObservacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoObservacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoObservacaoActionPerformed
+
     private void textoTelefone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoTelefone1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textoTelefone1ActionPerformed
@@ -710,13 +707,13 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoTelefone2ActionPerformed
 
-    private void textoIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoIdActionPerformed
+    private void textoRgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoRgActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textoIdActionPerformed
+    }//GEN-LAST:event_textoRgActionPerformed
 
-    private void textoObservacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoObservacaoActionPerformed
+    private void textoContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoContatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textoObservacaoActionPerformed
+    }//GEN-LAST:event_textoContatoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -782,10 +779,10 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel painelBotoes;
     private javax.swing.JPanel painelDados;
-    private javax.swing.JTextField textoCnpj;
+    private javax.swing.JFormattedTextField textoCnpj;
     private javax.swing.JTextField textoComplemento;
     private javax.swing.JTextField textoContato;
-    private javax.swing.JTextField textoCpf;
+    private javax.swing.JFormattedTextField textoCpf;
     private javax.swing.JTextField textoEmail;
     private javax.swing.JTextField textoEndereco;
     private javax.swing.JTextField textoId;
@@ -793,8 +790,8 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
     private javax.swing.JTextField textoNome;
     private javax.swing.JTextField textoObservacao;
     private javax.swing.JTextField textoRazao;
-    private javax.swing.JTextField textoRg;
-    private javax.swing.JTextField textoTelefone1;
-    private javax.swing.JTextField textoTelefone2;
+    private javax.swing.JFormattedTextField textoRg;
+    private javax.swing.JFormattedTextField textoTelefone1;
+    private javax.swing.JFormattedTextField textoTelefone2;
     // End of variables declaration//GEN-END:variables
 }

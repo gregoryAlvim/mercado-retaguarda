@@ -2,6 +2,7 @@ package com.mercadoComMaven.controller;
 
 import com.mercadoComMaven.modelBO.Classe;
 import com.mercadoComMaven.modelBO.Marca;
+import com.mercadoComMaven.modelBO.Produto;
 import com.mercadoComMaven.view.FormBuscaClasse;
 import com.mercadoComMaven.view.FormBuscaMarca;
 import com.mercadoComMaven.view.FormBuscaProduto;
@@ -138,8 +139,8 @@ public class ControllerCadProduto implements ActionListener{
                 telaProd.getTextoDescricao().setText(produto.getDescricao());
                 telaProd.getTextoValorCompra().setText(df.format(produto.getValorCompra()));
                 telaProd.getTextoValorVenda().setText(df.format(produto.getValorVenda()));
-                telaProd.getTextoUnidadeCompra().setText(produto.getUndCompra());
-                telaProd.getTextoUnidadeVenda().setText(produto.getUndVenda());
+                telaProd.getTextoUnidadeCompra().setText(produto.getUnidadeCompra());
+                telaProd.getTextoUnidadeVenda().setText(produto.getUnidadeVenda());
                 telaProd.getTextoBarraEntrada().setText(produto.getBarraEntrada());
                 telaProd.getTextoBarraSaida().setText(produto.getBarraSaida());
                 telaProd.getTextoEstoqueMin().setText(df.format(produto.getEstoqueMinimo()));
@@ -170,8 +171,8 @@ public class ControllerCadProduto implements ActionListener{
                 
                 Produto produto = new Produto();
                 produto.setDescricao(telaProd.getTextoDescricao().getText());
-                produto.setUndCompra(telaProd.getTextoUnidadeCompra().getText());
-                produto.setUndVenda(telaProd.getTextoUnidadeVenda().getText());
+                produto.setUnidadeCompra(telaProd.getTextoUnidadeCompra().getText());
+                produto.setUnidadeVenda(telaProd.getTextoUnidadeVenda().getText());
                 produto.setBarraEntrada(telaProd.getTextoBarraEntrada().getText());
                 produto.setBarraSaida(telaProd.getTextoBarraSaida().getText());
                 

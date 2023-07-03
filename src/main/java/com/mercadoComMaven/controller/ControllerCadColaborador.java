@@ -181,6 +181,10 @@ public class ControllerCadColaborador implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Atributo E-mail é Obrigatório");
             } else if (telaColaborador.getjTextFieldLogin().getText().trim().equalsIgnoreCase("")) {
                 JOptionPane.showMessageDialog(null, "Atributo Login é Obrigatório");
+            }else if (telaColaborador.getjTextFieldTelefone().getText().trim().equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(null, "Atributo Telefone é Obrigatório");
+            }else if (telaColaborador.getjTextFieldCelular().getText().trim().equalsIgnoreCase("")) {
+                JOptionPane.showMessageDialog(null, "Atributo Telefone 2 é Obrigatório");
             } else if (telaColaborador.getjTextFieldSenha().getText().trim().equalsIgnoreCase("")) {
                 JOptionPane.showMessageDialog(null, "Atributo Senha é Obrigatório");
             } else if (telaColaborador.getjTextFieldVerificaSenha().getText().trim().equalsIgnoreCase("")) {
@@ -193,45 +197,44 @@ public class ControllerCadColaborador implements ActionListener {
                 colaborador.setFone1(telaColaborador.getjTextFieldTelefone().getText());
                 colaborador.setFone2(telaColaborador.getjTextFieldCelular().getText());
                 colaborador.setLogin(telaColaborador.getjTextFieldLogin().getText());
-                
+
                 //Tratativa verificar se senha confere com a repetição
                 if (telaColaborador.getjTextFieldSenha().getText().equals(telaColaborador.getjTextFieldVerificaSenha().getText())) {
                     colaborador.setSenha(telaColaborador.getjTextFieldSenha().getText()); 
+
+                    colaborador.setEndereco(enderecoLocal);
+                    colaborador.setComplementoEndereco(telaColaborador.getjTextFieldComplemento().getText());
+                    colaborador.setObservacao(telaColaborador.getjTextFieldObservacao().getText());
+
+                    //Tratativa status 1 para verdadeiro e 0 para falso
+                    if(telaColaborador.getjComboBoxStatus().getSelectedIndex() == 0){
+                        colaborador.setStatus("1");
+                    }else{                   
+                        colaborador.setStatus("0");
+                    }
+
+                    //Tratativa data de cadastro
+                    try {
+                        DateFormat dataCadastro = new SimpleDateFormat("dd/MM/yyyy");
+                        colaborador.setDataCadastro(dataCadastro.parse(dataFormatada));
+                    } catch (Exception ex) {
+                    }
+
+                    if (this.telaColaborador.getjTextFieldId().getText().equalsIgnoreCase("")) {
+                        ColaboradorService.criar(colaborador);
+                    } else {
+                        colaborador.setId(Integer.parseInt(telaColaborador.getjTextFieldId().getText()));
+                        ColaboradorService.atualizar(colaborador);
+                    }
+
+                    setAllInputsEmpty();
+                    enableDisable(false);
+
+                    utilities.Utils.ativa(true, telaColaborador.getPainelBotoes());
+                    utilities.Utils.ligaDesliga(true, telaColaborador.getPainelDados());
                 } else {
                     JOptionPane.showMessageDialog(null, "As senhas não conferem!");
-                }
-                
-                colaborador.setEndereco(enderecoLocal);
-                colaborador.setComplementoEndereco(telaColaborador.getjTextFieldComplemento().getText());
-                colaborador.setObservacao(telaColaborador.getjTextFieldObservacao().getText());
-                
-                //Tratativa status 1 para verdadeiro e 0 para falso
-                if(telaColaborador.getjComboBoxStatus().getSelectedIndex() == 0){
-                    colaborador.setStatus("1");
-                }else{                   
-                    colaborador.setStatus("0");
-                }
-                
-                //Tratativa data de cadastro
-                try {
-                    DateFormat dataCadastro = new SimpleDateFormat("dd/MM/yyyy");
-                    colaborador.setDataCadastro(dataCadastro.parse(dataFormatada));
-                } catch (Exception ex) {
-                }
-
-                if (this.telaColaborador.getjTextFieldId().getText().equalsIgnoreCase("")) {
-                    ColaboradorService.criar(colaborador);
-                } else {
-                    colaborador.setId(Integer.parseInt(telaColaborador.getjTextFieldId().getText()));
-                    ColaboradorService.atualizar(colaborador);
-                }
-                
-                setAllInputsEmpty();
-                enableDisable(false);
-                
-                utilities.Utils.ativa(true, telaColaborador.getPainelBotoes());
-                utilities.Utils.ligaDesliga(true, telaColaborador.getPainelDados());
-                
+                }  
             }
         } else if (acao.getSource() == telaColaborador.getjButtonBuscarEndereco()) {
             this.codigo = 0;
