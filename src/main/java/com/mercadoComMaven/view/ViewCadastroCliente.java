@@ -100,7 +100,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         return textoCPF;
     }
 
-    public void setTextoCPF(JTextField textoCPF) {
+    public void setTextoCPF(JFormattedTextField textoCPF) {
         this.textoCPF = textoCPF;
     }
 
@@ -148,7 +148,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         return textoRG;
     }
 
-    public void setTextoRG(JTextField textoRG) {
+    public void setTextoRG(JFormattedTextField textoRG) {
         this.textoRG = textoRG;
     }
 
@@ -180,7 +180,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         this.textoEndereco = textoEndereco;
     }
 
-    public void setTextoTelefone1(JTextField textoTelefone1) {
+    public void setTextoTelefone1(JFormattedTextField textoTelefone1) {
         this.textoTelefone1 = textoTelefone1;
     }
 
@@ -188,7 +188,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         return textoTelefone2;
     }
 
-    public void setTextoTelefone2(JTextField textoTelefone2) {
+    public void setTextoTelefone2(JFormattedTextField textoTelefone2) {
         this.textoTelefone2 = textoTelefone2;
     }
 
@@ -215,16 +215,12 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         Buscar = new javax.swing.JButton();
         Sair = new javax.swing.JButton();
         painelDados = new javax.swing.JPanel();
-        textoCPF = new javax.swing.JTextField();
         textoNome = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         textoDataCadastro = new javax.swing.JFormattedTextField();
-        textoRG = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        textoTelefone2 = new javax.swing.JTextField();
-        textoTelefone1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         textoEmail = new javax.swing.JTextField();
@@ -245,6 +241,10 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         textoComplemento = new javax.swing.JTextArea();
         TextoId = new javax.swing.JTextField();
         jFormattedTextDataNascimento = new javax.swing.JFormattedTextField();
+        textoTelefone1 = new javax.swing.JFormattedTextField();
+        textoTelefone2 = new javax.swing.JFormattedTextField();
+        textoCPF = new javax.swing.JFormattedTextField();
+        textoRG = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -341,13 +341,6 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         painelDados.setBackground(new java.awt.Color(255, 255, 255));
         painelDados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        textoCPF.setBackground(new java.awt.Color(204, 204, 204));
-        textoCPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoCPFActionPerformed(evt);
-            }
-        });
-
         textoNome.setBackground(new java.awt.Color(204, 204, 204));
         textoNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -369,28 +362,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
             }
         });
 
-        textoRG.setBackground(new java.awt.Color(204, 204, 204));
-        textoRG.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoRGActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Nome:");
-
-        textoTelefone2.setBackground(new java.awt.Color(204, 204, 204));
-        textoTelefone2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoTelefone2ActionPerformed(evt);
-            }
-        });
-
-        textoTelefone1.setBackground(new java.awt.Color(204, 204, 204));
-        textoTelefone1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoTelefone1ActionPerformed(evt);
-            }
-        });
 
         jLabel6.setText("Fone 2:");
 
@@ -489,6 +461,44 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
             }
         });
 
+        textoTelefone1.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoTelefone1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textoTelefone1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoTelefone1ActionPerformed(evt);
+            }
+        });
+
+        textoTelefone2.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoTelefone2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        textoCPF.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        textoCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoCPFActionPerformed(evt);
+            }
+        });
+
+        textoRG.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            textoRG.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#.###.###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout painelDadosLayout = new javax.swing.GroupLayout(painelDados);
         painelDados.setLayout(painelDadosLayout);
         painelDadosLayout.setHorizontalGroup(
@@ -499,15 +509,9 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                     .addGroup(painelDadosLayout.createSequentialGroup()
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel10)
-                            .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7))
-                                .addGap(29, 29, 29)
-                                .addComponent(TextoId, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(painelDadosLayout.createSequentialGroup()
                                 .addComponent(jLabel14)
@@ -515,36 +519,41 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                             .addComponent(jScrollPane2)))
                     .addGroup(painelDadosLayout.createSequentialGroup()
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addGap(120, 120, 120)
-                                .addComponent(textoTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel13))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(painelDadosLayout.createSequentialGroup()
-                                        .addComponent(comboSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(27, 27, 27))
-                                    .addComponent(jFormattedTextDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(16, 16, 16)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel13))
+                        .addGap(291, 291, 291)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(textoDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelDadosLayout.createSequentialGroup()
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(comboStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(textoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(textoTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel12)
+                                .addGap(79, 79, 79)
+                                .addComponent(comboSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                                .addComponent(textoDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(textoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(painelDadosLayout.createSequentialGroup()
+                                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel7))
+                                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(painelDadosLayout.createSequentialGroup()
+                                                .addGap(29, 29, 29)
+                                                .addComponent(TextoId, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(painelDadosLayout.createSequentialGroup()
+                                                .addGap(80, 80, 80)
+                                                .addComponent(textoTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(38, 38, 38)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textoCPF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textoTelefone2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(painelDadosLayout.createSequentialGroup()
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
@@ -556,37 +565,40 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                                 .addComponent(textoEndereco)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonBuscarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textoEmail)
                             .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addComponent(textoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(textoEmail))))
+                                .addComponent(jFormattedTextDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         painelDadosLayout.setVerticalGroup(
             painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelDadosLayout.createSequentialGroup()
-                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(painelDadosLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(textoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textoTelefone1, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                            .addComponent(textoTelefone2)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel6))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(TextoId, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textoTelefone1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(textoTelefone2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))))
+                        .addComponent(jLabel7)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(textoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(textoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textoRG, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonBuscarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -599,19 +611,18 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                     .addComponent(textoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel4)
-                        .addComponent(textoDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jFormattedTextDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9)))
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(comboSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel13)
                         .addComponent(jLabel12))
-                    .addComponent(comboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(painelDadosLayout.createSequentialGroup()
@@ -622,7 +633,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -689,18 +700,6 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoEmailActionPerformed
 
-    private void textoTelefone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoTelefone1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoTelefone1ActionPerformed
-
-    private void textoTelefone2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoTelefone2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoTelefone2ActionPerformed
-
-    private void textoRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoRGActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoRGActionPerformed
-
     private void textoDataCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoDataCadastroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textoDataCadastroActionPerformed
@@ -709,13 +708,17 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoNomeActionPerformed
 
-    private void textoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoCPFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoCPFActionPerformed
-
     private void jFormattedTextDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextDataNascimentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextDataNascimentoActionPerformed
+
+    private void textoTelefone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoTelefone1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoTelefone1ActionPerformed
+
+    private void textoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoCPFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -783,15 +786,15 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel painelBotoes;
     private javax.swing.JPanel painelDados;
-    private javax.swing.JTextField textoCPF;
+    private javax.swing.JFormattedTextField textoCPF;
     private javax.swing.JTextArea textoComplemento;
     private javax.swing.JFormattedTextField textoDataCadastro;
     private javax.swing.JTextField textoEmail;
     private javax.swing.JTextField textoEndereco;
     private javax.swing.JTextField textoNome;
     private javax.swing.JTextArea textoObservacao;
-    private javax.swing.JTextField textoRG;
-    private javax.swing.JTextField textoTelefone1;
-    private javax.swing.JTextField textoTelefone2;
+    private javax.swing.JFormattedTextField textoRG;
+    private javax.swing.JFormattedTextField textoTelefone1;
+    private javax.swing.JFormattedTextField textoTelefone2;
     // End of variables declaration//GEN-END:variables
 }
