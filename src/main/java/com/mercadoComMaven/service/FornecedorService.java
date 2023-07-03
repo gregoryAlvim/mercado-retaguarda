@@ -8,33 +8,27 @@ import java.util.List;
 public class FornecedorService {
 
     public static void criar(Fornecedor objeto) {
-        FornecedorDAO fornecedorDAO = new FornecedorDAO();
-        fornecedorDAO.create(objeto);
+        FornecedorDAO.getInstance().create(objeto);
     }
 
     public static Fornecedor buscar(int codigo) {
-        FornecedorDAO fornecedorDAO = new FornecedorDAO();
-        return fornecedorDAO.retrive(codigo);
+        return FornecedorDAO.getInstance().retrive(codigo);
     }
 
     public static Fornecedor buscar(String descricao) {
-        FornecedorDAO fornecedorDAO = new FornecedorDAO();
-        return fornecedorDAO.retrive(descricao);    
+        return FornecedorDAO.getInstance().retrive(descricao);    
     }
 
     public static List<Fornecedor> buscar() {
-        FornecedorDAO fornecedorDAO = new FornecedorDAO();
-        return fornecedorDAO.retrive();   
+        return FornecedorDAO.getInstance().retrive();    
     }
 
     public static void atualizar(Fornecedor objeto) {
-        FornecedorDAO fornecedorDAO = new FornecedorDAO();
-        fornecedorDAO.update(objeto);   
+        FornecedorDAO.getInstance().update(objeto); 
     }
 
     public static void excluir(Fornecedor objeto) {
-        FornecedorDAO fornecedorDAO = new FornecedorDAO();
-        fornecedorDAO.delete(objeto);   
+        FornecedorDAO.getInstance().delete(objeto);   
     }
     
 }

@@ -1,6 +1,6 @@
 package com.mercadoComMaven.controller;
 
-import com.mercadoComMaven.modelBO.CondicaoPgto;
+import com.mercadoComMaven.modelBO.CondicaoPagamento;
 import com.mercadoComMaven.view.FormBuscaCondicaoPgto;
 import com.mercadoComMaven.service.CondicaoPgtoService;
 import java.awt.event.ActionEvent;
@@ -20,7 +20,7 @@ public class ControllerBuscaCondicaoPgto implements ActionListener{
         //Carregar os dados para a jTable
         DefaultTableModel tabela = (DefaultTableModel) this.formBuscaPgto.getTabelaBusca().getModel();
 
-        for (CondicaoPgto objetoAtualDaLista : CondicaoPgtoService.buscar()) {
+        for (CondicaoPagamento objetoAtualDaLista : CondicaoPgtoService.buscar()) {
             tabela.addRow(new Object[]{
                 objetoAtualDaLista.getId(),
                 objetoAtualDaLista.getDescricaoCondicao(),

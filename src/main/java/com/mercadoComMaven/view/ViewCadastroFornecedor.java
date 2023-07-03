@@ -355,7 +355,7 @@ public class ViewCadastroFornecedor extends javax.swing.JFrame {
         jLabel14.setText("Endereço");
 
         botaoBuscarEndereco.setBackground(new java.awt.Color(204, 204, 204));
-        botaoBuscarEndereco.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
+
         botaoBuscarEndereco.setText("jButton6");
 
         jLabel15.setText("Complemento:");

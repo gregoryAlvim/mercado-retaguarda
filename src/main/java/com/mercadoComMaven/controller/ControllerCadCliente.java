@@ -12,7 +12,10 @@ import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 public class ControllerCadCliente implements ActionListener {
@@ -59,22 +62,17 @@ public class ControllerCadCliente implements ActionListener {
         telaCliente.getTextoEndereco().setEnabled(false);
     }
     
-    public static String formatarData(String data) {
-        // Verifica se a data tem o tamanho correto
-        if (data.length() != 10) {
-            return null;
-        }
+    public static String formatarData(String dataParam) {
+        DateTimeFormatter formatoAtual = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+        DateTimeFormatter formatoDesejado = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        // Extrai o dia, mês e ano da data
-        String ano = data.substring(0, 4);
-        String mes = data.substring(5, 7);
-        String dia = data.substring(8);
-
-        // Formata a data com barras
-        return dia + "/" + mes + "/" + ano;
+        LocalDateTime data = LocalDateTime.parse(dataParam, formatoAtual);
+        String dataFormatada = data.format(formatoDesejado);
+        return dataFormatada;
     }
 
     public static String formatarCPF(String cpf) {
+        
         // Remove todos os caracteres não numéricos do CPF
         cpf = cpf.replaceAll("[^0-9]", "");
 
@@ -120,6 +118,7 @@ public class ControllerCadCliente implements ActionListener {
         } else if (acao.getSource() == telaCliente.getCancelar()) {
             utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
             utilities.Utils.ligaDesliga(false, telaCliente.getPainelDados());
+            enableDisable(false);
      
 
         } else if (acao.getSource() == telaCliente.getBuscar()) {
@@ -134,6 +133,7 @@ public class ControllerCadCliente implements ActionListener {
 
                 utilities.Utils.ativa(false, telaCliente.getPainelBotoes());
                 utilities.Utils.ligaDesliga(true, telaCliente.getPainelDados());
+                enableDisable(true);
 
                 telaCliente.getTextoId().setText(cliente.getId() + "");
                 telaCliente.getTextoNome().setText(cliente.getNome());
@@ -176,12 +176,15 @@ public class ControllerCadCliente implements ActionListener {
 
         } else if (acao.getSource() == telaCliente.getGravar()) {
             if (telaCliente.getTextoRG().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getTextoCPF().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getjFormattedTextDataNascimento().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getTextoTelefone1().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getTextoNome().getText().trim().equalsIgnoreCase("")
-                    || telaCliente.getTextoEmail().getText().trim().equalsIgnoreCase("")) {
+                || telaCliente.getTextoCPF().getText().trim().equalsIgnoreCase("")
+                || telaCliente.getjFormattedTextDataNascimento().getText().trim().equalsIgnoreCase("")
+                || telaCliente.getTextoTelefone1().getText().trim().equalsIgnoreCase("")
+                || telaCliente.getTextoNome().getText().trim().equalsIgnoreCase("")
+                || telaCliente.getTextoEmail().getText().trim().equalsIgnoreCase("")) {
+                
                 JOptionPane.showMessageDialog(null, "Há campos obrigatórios não preenchidos");
+                
+                
             } else {
 
                 Cliente cliente = new Cliente();
@@ -204,6 +207,19 @@ public class ControllerCadCliente implements ActionListener {
                 } catch (ParseException ex) {
                     JOptionPane.showMessageDialog(null, "Data de nascimento inválida!");
                 }
+                
+                try {
+                    String cpf = telaCliente.getTextoCPF().getText().replaceAll("\\D", "");
+                    if (cpf.length() != 11) {
+                        throw new IllegalArgumentException("CPF inválido!");
+                    }
+
+                    // Restante do código aqui...
+
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                }
+
 
                 //Tratativa status 1 para verdadeiro e 0 para falso
                 if (telaCliente.getComboStatus().getSelectedIndex() == 0) {
@@ -232,10 +248,13 @@ public class ControllerCadCliente implements ActionListener {
                     cliente.setId(Integer.parseInt(telaCliente.getTextoId().getText()));
                     ClienteService.atualizar(cliente);
                 }
-     
+                
+                telaCliente.getTextoObservacao().setText("");
+                telaCliente.getTextoComplemento().setText("");
 
                 utilities.Utils.ativa(true, telaCliente.getPainelBotoes());
                 utilities.Utils.ligaDesliga(true, telaCliente.getPainelDados());
+                enableDisable(false);
 
             }
 
