@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -104,11 +105,11 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
         this.jComboBoxStatus = jComboBoxStatus;
     }
 
-    public JTextField getjTextFieldCelular() {
+    public JFormattedTextField getjTextFieldCelular() {
         return jTextFieldCelular;
     }
 
-    public void setjTextFieldCelular(JTextField jTextFieldCelular) {
+    public void setjTextFieldCelular(JFormattedTextField jTextFieldCelular) {
         this.jTextFieldCelular = jTextFieldCelular;
     }
 
@@ -164,7 +165,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
         return jTextFieldVerificaSenha;
     }
 
-    public void setjTextFieldVerificaSenha(JTextField jTextFieldVerificaSenha) {
+    public void setjTextFieldVerificaSenha(JPasswordField jTextFieldVerificaSenha) {
         this.jTextFieldVerificaSenha = jTextFieldVerificaSenha;
     }
 
@@ -180,15 +181,15 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
         return jTextFieldSenha;
     }
 
-    public void setjTextFieldSenha(JTextField jTextFieldSenha) {
+    public void setjTextFieldSenha(JPasswordField jTextFieldSenha) {
         this.jTextFieldSenha = jTextFieldSenha;
     }
 
-    public JTextField getjTextFieldTelefone() {
+    public JFormattedTextField getjTextFieldTelefone() {
         return jTextFieldTelefone;
     }
 
-    public void setjTextFieldTelefone(JTextField jTextFieldTelefone) {
+    public void setjTextFieldTelefone(JFormattedTextField jTextFieldTelefone) {
         this.jTextFieldTelefone = jTextFieldTelefone;
     }
     
@@ -223,11 +224,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
         jTextFieldLogin = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldSenha = new javax.swing.JTextField();
-        jTextFieldVerificaSenha = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextFieldTelefone = new javax.swing.JTextField();
-        jTextFieldCelular = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jTextFieldEndereco = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -241,6 +238,10 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jComboBoxStatus = new javax.swing.JComboBox<>();
         jTextFieldId = new javax.swing.JTextField();
+        jTextFieldSenha = new javax.swing.JPasswordField();
+        jTextFieldVerificaSenha = new javax.swing.JPasswordField();
+        jTextFieldTelefone = new javax.swing.JFormattedTextField();
+        jTextFieldCelular = new javax.swing.JFormattedTextField();
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -348,16 +349,8 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel7.setText("Verifica senha:");
 
-        jTextFieldSenha.setBackground(new java.awt.Color(204, 204, 204));
-
-        jTextFieldVerificaSenha.setBackground(new java.awt.Color(204, 204, 204));
-
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel8.setText("Telefone:");
-
-        jTextFieldTelefone.setBackground(new java.awt.Color(204, 204, 204));
-
-        jTextFieldCelular.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel9.setText("Celular:");
@@ -403,6 +396,37 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
         jTextFieldId.setFocusable(false);
         jTextFieldId.setRequestFocusEnabled(false);
 
+        jTextFieldSenha.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldSenha.setText("jPasswordField1");
+
+        jTextFieldVerificaSenha.setBackground(new java.awt.Color(204, 204, 204));
+        jTextFieldVerificaSenha.setText("jPasswordField1");
+
+        jTextFieldTelefone.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            jTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTextFieldTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTelefoneActionPerformed(evt);
+            }
+        });
+
+        jTextFieldCelular.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            jTextFieldCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTextFieldCelular.setAutoscrolls(false);
+        jTextFieldCelular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCelularActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelDadosLayout = new javax.swing.GroupLayout(painelDados);
         painelDados.setLayout(painelDadosLayout);
         painelDadosLayout.setHorizontalGroup(
@@ -432,11 +456,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addComponent(jTextFieldCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelDadosLayout.createSequentialGroup()
                                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jTextFieldComplemento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
@@ -444,21 +464,28 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonBuscarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldEmail, javax.swing.GroupLayout.Alignment.LEADING)))
-                                .addGap(18, 18, 18)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(painelDadosLayout.createSequentialGroup()
+                                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jTextFieldNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(painelDadosLayout.createSequentialGroup()
+                                        .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)))
                                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldVerificaSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldSenha)
-                                    .addComponent(jTextFieldLogin))))))
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldLogin)
+                                    .addComponent(jTextFieldSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldVerificaSenha)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosLayout.createSequentialGroup()
+                                .addComponent(jTextFieldCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                                .addGap(299, 299, 299)
+                                .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painelDadosLayout.setVerticalGroup(
@@ -475,20 +502,23 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel6)
-                    .addComponent(jTextFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextFieldVerificaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jTextFieldVerificaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextFieldCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9))
-                    .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                    .addGroup(painelDadosLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelDadosLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))))
+                .addGap(49, 49, 49)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
@@ -507,7 +537,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
                     .addComponent(jTextFieldDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
                     .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -571,6 +601,14 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JButtonSairActionPerformed
 
+    private void jTextFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldTelefoneActionPerformed
+
+    private void jTextFieldCelularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCelularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCelularActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -632,7 +670,7 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextFieldCelular;
+    private javax.swing.JFormattedTextField jTextFieldCelular;
     private javax.swing.JTextField jTextFieldComplemento;
     private javax.swing.JTextField jTextFieldDataCadastro;
     private javax.swing.JTextField jTextFieldEmail;
@@ -641,9 +679,9 @@ public class ViewCadastroColaborador extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldLogin;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldObservacao;
-    private javax.swing.JTextField jTextFieldSenha;
-    private javax.swing.JTextField jTextFieldTelefone;
-    private javax.swing.JTextField jTextFieldVerificaSenha;
+    private javax.swing.JPasswordField jTextFieldSenha;
+    private javax.swing.JFormattedTextField jTextFieldTelefone;
+    private javax.swing.JPasswordField jTextFieldVerificaSenha;
     private javax.swing.JPanel painelBotoes;
     private javax.swing.JPanel painelDados;
     // End of variables declaration//GEN-END:variables
