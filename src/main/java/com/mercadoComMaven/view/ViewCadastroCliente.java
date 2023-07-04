@@ -280,7 +280,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
 
         Novo.setBackground(new java.awt.Color(153, 153, 153));
         Novo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Novo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Create.png")); // NOI18N
+        Novo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Create.png")); // NOI18N
         Novo.setText("Novo");
         Novo.setActionCommand("0");
         Novo.addActionListener(new java.awt.event.ActionListener() {
@@ -292,7 +292,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
 
         Gravar.setBackground(new java.awt.Color(153, 153, 153));
         Gravar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Gravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\OK.png")); // NOI18N
+        Gravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\OK.png")); // NOI18N
         Gravar.setText("Gravar");
         Gravar.setActionCommand("1");
         Gravar.addActionListener(new java.awt.event.ActionListener() {
@@ -304,7 +304,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
 
         Cancelar.setBackground(new java.awt.Color(153, 153, 153));
         Cancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Cancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Delete.png")); // NOI18N
+        Cancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Cancel.png")); // NOI18N
         Cancelar.setText("Cancelar");
         Cancelar.setActionCommand("1");
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -316,7 +316,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
 
         Buscar.setBackground(new java.awt.Color(153, 153, 153));
         Buscar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Buscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
+        Buscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
         Buscar.setText("Buscar");
         Buscar.setActionCommand("0");
         Buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -328,7 +328,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
 
         Sair.setBackground(new java.awt.Color(153, 153, 153));
         Sair.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Exit.png")); // NOI18N
+        Sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Exit.png")); // NOI18N
         Sair.setText("Sair");
         Sair.setActionCommand("0");
         Sair.addActionListener(new java.awt.event.ActionListener() {
@@ -424,8 +424,8 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
         jLabel11.setText("Endereço:");
 
         jButtonBuscarEndereco.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonBuscarEndereco.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
-        jButtonBuscarEndereco.setText("...");
+        jButtonBuscarEndereco.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
+        jButtonBuscarEndereco.setText("Buscar");
         jButtonBuscarEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBuscarEnderecoActionPerformed(evt);
@@ -511,7 +511,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(jLabel1)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(painelDadosLayout.createSequentialGroup()
                                 .addComponent(jLabel14)
@@ -549,11 +549,13 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textoCPF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textoTelefone2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(comboStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(painelDadosLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(comboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textoTelefone2)
+                            .addComponent(textoCPF)))
                     .addGroup(painelDadosLayout.createSequentialGroup()
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
@@ -561,14 +563,14 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                         .addGap(68, 68, 68)
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textoNome, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addComponent(textoEndereco)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonBuscarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(textoEmail)
                             .addGroup(painelDadosLayout.createSequentialGroup()
                                 .addComponent(jFormattedTextDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(painelDadosLayout.createSequentialGroup()
+                                .addComponent(textoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonBuscarEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         painelDadosLayout.setVerticalGroup(
@@ -633,7 +635,7 @@ public class ViewCadastroCliente extends javax.swing.JFrame {
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

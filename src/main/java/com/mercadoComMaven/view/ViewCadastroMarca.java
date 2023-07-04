@@ -227,7 +227,7 @@ public class ViewCadastroMarca extends javax.swing.JFrame {
 
         Novo.setBackground(new java.awt.Color(153, 153, 153));
         Novo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Novo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Create.png")); // NOI18N
+        Novo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Create.png")); // NOI18N
         Novo.setText("Novo");
         Novo.setActionCommand("0");
         Novo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -240,7 +240,7 @@ public class ViewCadastroMarca extends javax.swing.JFrame {
 
         Gravar.setBackground(new java.awt.Color(153, 153, 153));
         Gravar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Gravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\OK.png")); // NOI18N
+        Gravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\OK.png")); // NOI18N
         Gravar.setText("Gravar");
         Gravar.setActionCommand("1");
         Gravar.addActionListener(new java.awt.event.ActionListener() {
@@ -252,7 +252,7 @@ public class ViewCadastroMarca extends javax.swing.JFrame {
 
         Cancelar.setBackground(new java.awt.Color(153, 153, 153));
         Cancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Cancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Delete.png")); // NOI18N
+        Cancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Cancel.png")); // NOI18N
         Cancelar.setText("Cancelar");
         Cancelar.setActionCommand("1");
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -264,7 +264,7 @@ public class ViewCadastroMarca extends javax.swing.JFrame {
 
         Buscar.setBackground(new java.awt.Color(153, 153, 153));
         Buscar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Buscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
+        Buscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
         Buscar.setText("Buscar");
         Buscar.setActionCommand("0");
         Buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -276,7 +276,7 @@ public class ViewCadastroMarca extends javax.swing.JFrame {
 
         Sair.setBackground(new java.awt.Color(153, 153, 153));
         Sair.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Exit.png")); // NOI18N
+        Sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Exit.png")); // NOI18N
         Sair.setText("Sair");
         Sair.setActionCommand("0");
         Sair.addActionListener(new java.awt.event.ActionListener() {
@@ -301,7 +301,7 @@ public class ViewCadastroMarca extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(painelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addComponent(painelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

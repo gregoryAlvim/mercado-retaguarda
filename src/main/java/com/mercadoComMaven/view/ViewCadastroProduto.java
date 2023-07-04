@@ -266,7 +266,7 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
 
         Novo.setBackground(new java.awt.Color(153, 153, 153));
         Novo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-
+        Novo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Create.png")); // NOI18N
         Novo.setText("Novo");
         Novo.setActionCommand("0");
         Novo.addActionListener(new java.awt.event.ActionListener() {
@@ -278,7 +278,7 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
 
         Gravar.setBackground(new java.awt.Color(153, 153, 153));
         Gravar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-
+        Gravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\OK.png")); // NOI18N
         Gravar.setText("Gravar");
         Gravar.setActionCommand("1");
         Gravar.addActionListener(new java.awt.event.ActionListener() {
@@ -290,7 +290,7 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
 
         Cancelar.setBackground(new java.awt.Color(153, 153, 153));
         Cancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-
+        Cancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Cancel.png")); // NOI18N
         Cancelar.setText("Cancelar");
         Cancelar.setActionCommand("1");
         Cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -302,7 +302,7 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
 
         Buscar.setBackground(new java.awt.Color(153, 153, 153));
         Buscar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-
+        Buscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
         Buscar.setText("Buscar");
         Buscar.setActionCommand("0");
         Buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -314,7 +314,7 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
 
         Sair.setBackground(new java.awt.Color(153, 153, 153));
         Sair.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-
+        Sair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Exit.png")); // NOI18N
         Sair.setText("Sair");
         Sair.setActionCommand("0");
         Sair.addActionListener(new java.awt.event.ActionListener() {
@@ -468,8 +468,12 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
         jLabel17.setText("Marca:");
 
         jButtonBuscarClasse.setBackground(new java.awt.Color(204, 204, 204));
+        jButtonBuscarClasse.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
+        jButtonBuscarClasse.setText("Buscar");
 
-        jButtonBuscarMarca.setText("jButton6");
+        jButtonBuscarMarca.setBackground(new java.awt.Color(204, 204, 204));
+        jButtonBuscarMarca.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
+        jButtonBuscarMarca.setText("Buscar");
 
         textoMarca.setBackground(new java.awt.Color(204, 204, 204));
         textoMarca.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
@@ -523,21 +527,6 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
                                 .addComponent(jLabel13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(comboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(painelDadosLayout.createSequentialGroup()
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(painelDadosLayout.createSequentialGroup()
-                                        .addGap(247, 247, 247)
-                                        .addComponent(jLabel17)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(textoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosLayout.createSequentialGroup()
-                                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textoClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonBuscarClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonBuscarMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(painelDadosLayout.createSequentialGroup()
                                     .addComponent(jLabel12)
@@ -564,8 +553,23 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
                                             .addGap(7, 7, 7)
                                             .addComponent(jLabel10)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(textoBarraSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
-                .addContainerGap(286, Short.MAX_VALUE))
+                                            .addComponent(textoBarraSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(painelDadosLayout.createSequentialGroup()
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(painelDadosLayout.createSequentialGroup()
+                                        .addGap(247, 247, 247)
+                                        .addComponent(jLabel17)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(textoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDadosLayout.createSequentialGroup()
+                                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textoClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButtonBuscarClasse, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                                    .addComponent(jButtonBuscarMarca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         painelDadosLayout.setVerticalGroup(
             painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -627,7 +631,7 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
                     .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(textoFator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel15)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
@@ -651,7 +655,7 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(painelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(painelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -694,25 +698,9 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textoUnidadeVendaActionPerformed
 
-    private void textoValorVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoValorVendaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoValorVendaActionPerformed
-
-    private void textoValorCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoValorCompraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoValorCompraActionPerformed
-
     private void textoUnidadeCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoUnidadeCompraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textoUnidadeCompraActionPerformed
-
-    private void TextoEstoqueMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoEstoqueMinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextoEstoqueMinActionPerformed
-
-    private void textoEstoqueMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEstoqueMaxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoEstoqueMaxActionPerformed
 
     private void textoFatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoFatorActionPerformed
         // TODO add your handling code here:
@@ -729,6 +717,22 @@ public class ViewCadastroProduto extends javax.swing.JFrame {
     private void jTextFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldIdActionPerformed
+
+    private void textoValorVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoValorVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoValorVendaActionPerformed
+
+    private void textoEstoqueMaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoEstoqueMaxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoEstoqueMaxActionPerformed
+
+    private void TextoEstoqueMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoEstoqueMinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextoEstoqueMinActionPerformed
+
+    private void textoValorCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoValorCompraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoValorCompraActionPerformed
 
     /**
      * @param args the command line arguments

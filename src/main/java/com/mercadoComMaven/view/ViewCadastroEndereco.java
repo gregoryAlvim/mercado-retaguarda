@@ -107,11 +107,11 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
         this.jTextFieldBairro = jTextFieldBairro;
     }
 
-    public JTextField getjTextFieldCEP() {
+    public JFormattedTextField getjTextFieldCEP() {
         return jTextFieldCEP;
     }
 
-    public void setjTextFieldCEP(JTextField jTextFieldCEP) {
+    public void setjTextFieldCEP(JFormattedTextField jTextFieldCEP) {
         this.jTextFieldCEP = jTextFieldCEP;
     }
 
@@ -154,7 +154,6 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
         painelDados = new javax.swing.JPanel();
         jTextFieldLogradouro = new javax.swing.JTextField();
         jTextFieldBairro = new javax.swing.JTextField();
-        jTextFieldCEP = new javax.swing.JTextField();
         jButtonBuscarBairro = new javax.swing.JButton();
         jTextFieldCidade = new javax.swing.JTextField();
         jButtonBuscarCidade = new javax.swing.JButton();
@@ -163,6 +162,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextFieldId = new javax.swing.JTextField();
+        jTextFieldCEP = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -180,7 +180,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
 
         JButtonNovo.setBackground(new java.awt.Color(153, 153, 153));
         JButtonNovo.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonNovo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Create.png")); // NOI18N
+        JButtonNovo.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Create.png")); // NOI18N
         JButtonNovo.setText("Novo");
         JButtonNovo.setActionCommand("0");
         JButtonNovo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -193,7 +193,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
 
         JButtonGravar.setBackground(new java.awt.Color(153, 153, 153));
         JButtonGravar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonGravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\OK.png")); // NOI18N
+        JButtonGravar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\OK.png")); // NOI18N
         JButtonGravar.setText("Gravar");
         JButtonGravar.setActionCommand("1");
         JButtonGravar.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +205,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
 
         JButtonCancelar.setBackground(new java.awt.Color(153, 153, 153));
         JButtonCancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonCancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Delete.png")); // NOI18N
+        JButtonCancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Cancel.png")); // NOI18N
         JButtonCancelar.setText("Cancelar");
         JButtonCancelar.setActionCommand("1");
         JButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +217,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
 
         JButtonBuscar.setBackground(new java.awt.Color(153, 153, 153));
         JButtonBuscar.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonBuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
+        JButtonBuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
         JButtonBuscar.setText("Buscar");
         JButtonBuscar.setActionCommand("0");
         JButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +229,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
 
         JButtonSair.setBackground(new java.awt.Color(153, 153, 153));
         JButtonSair.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        JButtonSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Exit.png")); // NOI18N
+        JButtonSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Exit.png")); // NOI18N
         JButtonSair.setText("Sair");
         JButtonSair.setActionCommand("0");
         JButtonSair.addActionListener(new java.awt.event.ActionListener() {
@@ -262,18 +262,9 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldCEP.setBackground(new java.awt.Color(204, 204, 204));
-        jTextFieldCEP.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jTextFieldCEP.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextFieldCEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCEPActionPerformed(evt);
-            }
-        });
-
         jButtonBuscarBairro.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonBuscarBairro.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
-        jButtonBuscarBairro.setText("jButton6");
+        jButtonBuscarBairro.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
+        jButtonBuscarBairro.setText("Buscar");
 
         jTextFieldCidade.setBackground(new java.awt.Color(204, 204, 204));
         jTextFieldCidade.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
@@ -286,8 +277,8 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
         });
 
         jButtonBuscarCidade.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonBuscarCidade.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Documents\\NetBeansProjects\\mercadoComMaven\\src\\test\\java\\images\\Find.png")); // NOI18N
-        jButtonBuscarCidade.setText("jButton6");
+        jButtonBuscarCidade.setIcon(new javax.swing.ImageIcon("C:\\Users\\aluno\\Desktop\\jp\\mercado-retaguarda\\src\\test\\java\\images\\Find.png")); // NOI18N
+        jButtonBuscarCidade.setText("Buscar");
         jButtonBuscarCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBuscarCidadeActionPerformed(evt);
@@ -327,6 +318,18 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldCEP.setBackground(new java.awt.Color(204, 204, 204));
+        try {
+            jTextFieldCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jTextFieldCEP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCEPActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelDadosLayout = new javax.swing.GroupLayout(painelDados);
         painelDados.setLayout(painelDadosLayout);
         painelDadosLayout.setHorizontalGroup(
@@ -336,8 +339,9 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4)
                     .addGroup(painelDadosLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
                         .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldId, 0, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
@@ -349,10 +353,10 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
                             .addComponent(jTextFieldCidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonBuscarBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jButtonBuscarCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))
-                    .addComponent(jTextFieldCEP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-                    .addComponent(jTextFieldLogradouro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButtonBuscarBairro, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                            .addComponent(jButtonBuscarCidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jTextFieldLogradouro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextFieldCEP))
                 .addContainerGap())
         );
         painelDadosLayout.setVerticalGroup(
@@ -364,9 +368,9 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCEP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(painelDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -379,7 +383,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
                         .addComponent(jButtonBuscarCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel7))
                     .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -391,7 +395,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(painelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(213, 213, 213))
+                .addGap(138, 138, 138))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,7 +403,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100)
                 .addComponent(painelDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
                 .addComponent(painelBotoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -428,10 +432,6 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
     private void jTextFieldBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBairroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBairroActionPerformed
-
-    private void jTextFieldCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCEPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCEPActionPerformed
 
     private void jTextFieldCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCidadeActionPerformed
         // TODO add your handling code here:
@@ -464,6 +464,10 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
     private void jTextFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldIdActionPerformed
+
+    private void jTextFieldCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCEPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldCEPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -517,7 +521,7 @@ public class ViewCadastroEndereco extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextFieldBairro;
-    private javax.swing.JTextField jTextFieldCEP;
+    private javax.swing.JFormattedTextField jTextFieldCEP;
     private javax.swing.JTextField jTextFieldCidade;
     private javax.swing.JTextField jTextFieldId;
     private javax.swing.JTextField jTextFieldLogradouro;

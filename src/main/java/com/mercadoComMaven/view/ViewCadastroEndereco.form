@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -54,7 +54,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="painelDados" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -64,7 +64,7 @@
                   <Component id="jPanel2" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                   <Component id="painelDados" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="171" max="32767" attributes="0"/>
+                  <EmptySpace pref="169" max="32767" attributes="0"/>
                   <Component id="painelBotoes" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -118,7 +118,7 @@
                   <Font name="Trebuchet MS" size="12" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Create.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Create.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Novo"/>
                 <Property name="actionCommand" type="java.lang.String" value="0"/>
@@ -139,7 +139,7 @@
                   <Font name="Trebuchet MS" size="12" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\OK.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\OK.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Gravar"/>
                 <Property name="actionCommand" type="java.lang.String" value="1"/>
@@ -157,7 +157,7 @@
                   <Font name="Trebuchet MS" size="12" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Delete.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Cancel.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
                 <Property name="actionCommand" type="java.lang.String" value="1"/>
@@ -175,7 +175,7 @@
                   <Font name="Trebuchet MS" size="12" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Find.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Find.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
                 <Property name="actionCommand" type="java.lang.String" value="0"/>
@@ -193,7 +193,7 @@
                   <Font name="Trebuchet MS" size="12" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Exit.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Exit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sair"/>
                 <Property name="actionCommand" type="java.lang.String" value="0"/>
@@ -224,8 +224,9 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTextFieldId" min="0" pref="0" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -240,12 +241,12 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButtonBuscarBairro" pref="0" max="32767" attributes="0"/>
-                                  <Component id="jButtonBuscarCidade" pref="0" max="32767" attributes="0"/>
+                                  <Component id="jButtonBuscarBairro" pref="119" max="32767" attributes="0"/>
+                                  <Component id="jButtonBuscarCidade" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jTextFieldCEP" alignment="1" pref="349" max="32767" attributes="0"/>
                           <Component id="jTextFieldLogradouro" max="32767" attributes="0"/>
+                          <Component id="jTextFieldCEP" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -261,9 +262,9 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextFieldCEP" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextFieldId" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldCEP" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -281,7 +282,7 @@
                           </Group>
                           <Component id="jTextFieldCidade" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -321,29 +322,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldBairroActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldCEP">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="12" style="0"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="2"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldCEPActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JButton" name="jButtonBuscarBairro">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Find.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Find.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jButton6"/>
+                <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldCidade">
@@ -369,9 +356,9 @@
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\aluno\Documents\NetBeansProjects\mercadoComMaven\src\test\java\images\Find.png"/>
+                  <Image iconType="2" name="C:\Users\aluno\Desktop\jp\mercado-retaguarda\src\test\java\images\Find.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jButton6"/>
+                <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBuscarCidadeActionPerformed"/>
@@ -439,6 +426,19 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldIdActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jTextFieldCEP">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                </Property>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                  <Format format="#####-###" subtype="-1" type="5"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldCEPActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
